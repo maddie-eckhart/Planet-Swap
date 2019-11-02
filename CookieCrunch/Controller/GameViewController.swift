@@ -47,11 +47,12 @@ class GameViewController: UIViewController {
     scene.scaleMode = .aspectFill
     
     //Create the level
-    level = Level()
+    level = Level(filename: "Level_1")
     scene.level = level
     
     // Present the scene.
     skView.presentScene(scene)
+    scene.addTiles()
     
     beginGame()
   }

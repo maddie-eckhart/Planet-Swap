@@ -21,7 +21,10 @@ enum PlanetType: Int {
 class Planet: CustomStringConvertible, Hashable {
   
   func hash(into hasher: inout Hasher) {
-    var hashValue = row * 10 + column
+    //var hashValue = row * 10 + column
+    var hasher = Hasher()
+    hasher.combine(row * 10 + column)
+    let hashValue = hasher.finalize()
   }
   
   static func == (lhs: Planet, rhs: Planet) -> Bool {
