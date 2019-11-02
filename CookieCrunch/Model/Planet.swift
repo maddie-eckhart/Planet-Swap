@@ -3,13 +3,25 @@ import SpriteKit
 // MARK: - PlanetType
 enum PlanetType: Int {
   case unknown = 0, croissant, cupcake, danish, donut, macaroon, sugarCookie
+  var spriteName: String {
+    let spriteNames = ["Croissant","Cupcake","Danish","Donut","Macaroon","SugarCookie"]
+    return spriteNames[rawValue - 1]
+  }
+
+  var highlightedSpriteName: String {
+    return spriteName + "-Highlighted"
+  }
+  
+  static func random() -> PlanetType {
+    return PlanetType(rawValue: Int(arc4random_uniform(6)) + 1)!
+  }
 }
 
-// MARK: - Planet 
+// MARK: - Planet
 class Planet: CustomStringConvertible, Hashable {
   
-  var hashValue: Int {
-    return row * 10 + column
+  func hash(into hasher: inout Hasher) {
+    var hashValue = row * 10 + column
   }
   
   static func == (lhs: Planet, rhs: Planet) -> Bool {
