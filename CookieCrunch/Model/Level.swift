@@ -28,8 +28,8 @@ class Level {
         let planetType = PlanetType.random()
 
         // 3
-        let cookie = Planet(column: column, row: row, planetType: planetType)
-        planets[column, row] = cookie
+        let planet = Planet(column: column, row: row, planetType: planetType)
+        planets[column, row] = planet
 
         // 4
         set.insert(planet)
