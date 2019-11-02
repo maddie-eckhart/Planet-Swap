@@ -5,7 +5,7 @@ enum PlanetType: Int {
   case unknown = 0, croissant, cupcake, danish, donut, macaroon, sugarCookie
 }
 
-// MARK: - Planet
+// MARK: - Planet 
 class Planet: CustomStringConvertible, Hashable {
   
   var hashValue: Int {
