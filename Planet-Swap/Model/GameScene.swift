@@ -11,8 +11,8 @@ class GameScene: SKScene {
   
   var level: Level!
 
-  let tileWidth: CGFloat = 36.0
-  let tileHeight: CGFloat = 36.0
+  let tileWidth: CGFloat = 40.0
+  let tileHeight: CGFloat = 40.0
 
   let gameLayer = SKNode()
   let planetsLayer = SKNode()
