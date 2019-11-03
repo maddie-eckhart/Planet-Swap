@@ -11,7 +11,7 @@ class GameScene: SKScene {
   
   var level: Level!
 
-  let tileWidth: CGFloat = 32.0
+  let tileWidth: CGFloat = 36.0
   let tileHeight: CGFloat = 36.0
 
   let gameLayer = SKNode()
@@ -59,7 +59,7 @@ class GameScene: SKScene {
   func addSprites(for planets: Set<Planet>) {
     for planet in planets {
       let sprite = SKSpriteNode(imageNamed: planet.planetType.spriteName)
-      sprite.size = CGSize(width: tileWidth, height: tileHeight)
+      sprite.size = CGSize(width: tileWidth - 5, height: tileHeight - 5)
       sprite.position = pointFor(column: planet.column, row: planet.row)
       planetsLayer.addChild(sprite)
       planet.sprite = sprite
