@@ -1,13 +1,26 @@
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
 class GameScene: SKScene {
   // Sound FX
   let swapSound = SKAction.playSoundFileNamed("Chomp.wav", waitForCompletion: false)
   let invalidSwapSound = SKAction.playSoundFileNamed("Error.wav", waitForCompletion: false)
-  let matchSound = SKAction.playSoundFileNamed("Ka-Ching.wav", waitForCompletion: false)
+  let matchSound = SKAction.playSoundFileNamed("Explosion.wav", waitForCompletion: false)
   let fallingCookieSound = SKAction.playSoundFileNamed("Scrape.wav", waitForCompletion: false)
   let addCookieSound = SKAction.playSoundFileNamed("Drip.wav", waitForCompletion: false)
+  lazy var gameOverMusic: AVAudioPlayer? = {
+    guard let url = Bundle.main.url(forResource: "Sad_Trombone", withExtension: "wav") else {
+      return nil
+    }
+    do {
+      let player = try AVAudioPlayer(contentsOf: url)
+      player.numberOfLoops = 1
+      return player
+    } catch {
+      return nil
+    }
+  }()
   
   var level: Level!
 
@@ -164,6 +177,8 @@ class GameScene: SKScene {
   }
   
   func animateGameOver(_ completion: @escaping () -> Void) {
+
+    gameOverMusic?.play()
     let action = SKAction.move(by: CGVector(dx: 0, dy: -size.height), duration: 0.3)
     action.timingMode = .easeIn
     gameLayer.run(action, completion: completion)

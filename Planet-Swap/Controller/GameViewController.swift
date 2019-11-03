@@ -16,7 +16,7 @@ class GameViewController: UIViewController {
   
   var tapGestureRecognizer: UITapGestureRecognizer!
   lazy var backgroundMusic: AVAudioPlayer? = {
-    guard let url = Bundle.main.url(forResource: "Mining by Moonlight", withExtension: "mp3") else {
+    guard let url = Bundle.main.url(forResource: "EpicSpace", withExtension: "wav") else {
       return nil
     }
     do {
@@ -117,6 +117,7 @@ class GameViewController: UIViewController {
       showGameOver()
     } else if movesLeft == 0 {
       gameOverPanel.image = UIImage(named: "GameOver")
+      backgroundMusic?.stop()
       showGameOver()
     }
   }
