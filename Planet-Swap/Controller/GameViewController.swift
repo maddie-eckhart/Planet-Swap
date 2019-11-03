@@ -95,14 +95,23 @@ class GameViewController: UIViewController {
   
   func handleMatches() {
     let chains = level.removeMatches()
+    if chains.count == 0 {
+      beginNextTurn()
+      return
+    }
     scene.animateMatchedPlanets(for: chains) {
       let columns = self.level.fillHoles()
       self.scene.animateFallingPlanets(in: columns) {
         let columns = self.level.topUpPlanets()
         self.scene.animateNewPlanets(in: columns) {
-          self.view.isUserInteractionEnabled = true
+          self.handleMatches()
         }
       }
     }
+  }
+  
+  func beginNextTurn() {
+    level.detectPossibleSwaps()
+    view.isUserInteractionEnabled = true
   }
 }
