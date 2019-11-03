@@ -38,6 +38,7 @@
 		C14F4A3F236F17DB0087BCC1 /* Explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = C14F4A3E236F17DB0087BCC1 /* Explosion.wav */; };
 		C14F4A41236F181F0087BCC1 /* EpicSpace.wav in Resources */ = {isa = PBXBuildFile; fileRef = C14F4A40236F181F0087BCC1 /* EpicSpace.wav */; };
 		C14F4A43236F19330087BCC1 /* Sad_Trombone.wav in Resources */ = {isa = PBXBuildFile; fileRef = C14F4A42236F19330087BCC1 /* Sad_Trombone.wav */; };
+		C14F4A45236F20570087BCC1 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14F4A44236F20570087BCC1 /* LobbyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		C14F4A3E236F17DB0087BCC1 /* Explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Explosion.wav; sourceTree = "<group>"; };
 		C14F4A40236F181F0087BCC1 /* EpicSpace.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = EpicSpace.wav; sourceTree = "<group>"; };
 		C14F4A42236F19330087BCC1 /* Sad_Trombone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Sad_Trombone.wav; sourceTree = "<group>"; };
+		C14F4A44236F20570087BCC1 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 		C1176E26236E01F70099576F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C14F4A44236F20570087BCC1 /* LobbyViewController.swift */,
 				17A7E5791FB513CC0044C48F /* GameViewController.swift */,
 			);
 			path = Controller;
@@ -282,6 +285,7 @@
 				17A7E57A1FB513CC0044C48F /* GameViewController.swift in Sources */,
 				C12737BF236E7A2900483A95 /* Chain.swift in Sources */,
 				C1176E2A236E0BC10099576F /* Level.swift in Sources */,
+				C14F4A45236F20570087BCC1 /* LobbyViewController.swift in Sources */,
 				C12737BD236E528C00483A95 /* Tile.swift in Sources */,
 				17A7E5721FB513CC0044C48F /* AppDelegate.swift in Sources */,
 				C1176E2C236E3E4E0099576F /* Swap.swift in Sources */,

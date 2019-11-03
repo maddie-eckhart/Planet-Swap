@@ -177,7 +177,6 @@ class GameScene: SKScene {
   }
   
   func animateGameOver(_ completion: @escaping () -> Void) {
-
     gameOverMusic?.play()
     let action = SKAction.move(by: CGVector(dx: 0, dy: -size.height), duration: 0.3)
     action.timingMode = .easeIn

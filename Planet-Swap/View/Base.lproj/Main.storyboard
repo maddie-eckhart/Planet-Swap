@@ -8,10 +8,54 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Lobby View Controller-->
+        <scene sceneID="3EW-lb-m10">
+            <objects>
+                <viewController id="rT6-hQ-6Xg" customClass="LobbyViewController" customModule="Planet_Swap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L5p-Cc-WKC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="7nT-eK-zOl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPo-f3-Rik" userLabel="START">
+                                <rect key="frame" x="124" y="371" width="127" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
+                                <state key="normal" title="START" backgroundImage="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="SaveTgwWithSender:" destination="rT6-hQ-6Xg" eventType="touchUpInside" id="Gcx-zI-JQi"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Planet Swap" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rc2-gB-YGM">
+                                <rect key="frame" x="89" y="118" width="196" height="219"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="62"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1283361912" green="0.035825576630000001" blue="0.43912744520000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7nT-eK-zOl" firstAttribute="bottom" secondItem="uXT-ow-HhH" secondAttribute="bottom" id="3Kc-07-Czi"/>
+                            <constraint firstItem="7nT-eK-zOl" firstAttribute="top" secondItem="uXT-ow-HhH" secondAttribute="top" id="DDg-DP-NjW"/>
+                            <constraint firstItem="7nT-eK-zOl" firstAttribute="leading" secondItem="uXT-ow-HhH" secondAttribute="leading" id="o7n-QG-sLZ"/>
+                            <constraint firstItem="7nT-eK-zOl" firstAttribute="trailing" secondItem="uXT-ow-HhH" secondAttribute="trailing" id="ysC-wf-uhS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uXT-ow-HhH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VSo-QK-zDE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-706.39999999999998" y="133.5832083958021"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="Planet_Swap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameVC" id="BV1-FR-VrT" customClass="GameViewController" customModule="Planet_Swap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,6 +167,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
+                    <navigationItem key="navigationItem" id="a1f-jp-DtY"/>
                     <connections>
                         <outlet property="gameOverPanel" destination="LJ4-Ff-cDr" id="FeW-ZQ-R25"/>
                         <outlet property="movesLabel" destination="kyL-yK-9Bz" id="eFA-Nf-PX8"/>
@@ -157,6 +202,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Background" width="198" height="353.66665649414062"/>
         <image name="Button" width="126.33333587646484" height="43"/>
     </resources>
 </document>
