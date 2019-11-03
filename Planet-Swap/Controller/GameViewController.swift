@@ -12,6 +12,7 @@ class GameViewController: UIViewController {
   
   var movesLeft = 0
   var score = 0
+  var currentLevelNumber = 1
   
   var tapGestureRecognizer: UITapGestureRecognizer!
   lazy var backgroundMusic: AVAudioPlayer? = {
@@ -34,31 +35,19 @@ class GameViewController: UIViewController {
   @IBOutlet weak var scoreLabel: UILabel!
   @IBOutlet weak var shuffleButton: UIButton!
   
-  @IBAction func shuffleButtonPressed(_: AnyObject) {}
+  @IBAction func shuffleButtonPressed(_: AnyObject) {
+    shuffle()
+    decrementMoves()
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Configure the view
-    let skView = view as! SKView
-    skView.isMultipleTouchEnabled = false
-    gameOverPanel.isHidden = true
+    // Setup view with level 1
+    setupLevel(number: currentLevelNumber)
     
-    // Create and configure the scene.
-    scene = GameScene(size: skView.bounds.size)
-    scene.scaleMode = .aspectFill
-    
-    //Create the level
-    level = Level(filename: "Level_1")
-    scene.level = level
-    
-    scene.swipeHandler = handleSwipe
-    
-    // Present the scene.
-    skView.presentScene(scene)
-    scene.addTiles()
-    
-    beginGame()
+    // Start the background music.
+    backgroundMusic?.play()
   }
   
   override var prefersStatusBarHidden: Bool {
@@ -73,15 +62,44 @@ class GameViewController: UIViewController {
     return [.portrait, .portraitUpsideDown]
   }
   
+  func setupLevel(number levelNumber: Int) {
+    let skView = view as! SKView
+    skView.isMultipleTouchEnabled = false
+
+    // Create and configure the scene.
+    scene = GameScene(size: skView.bounds.size)
+    scene.scaleMode = .aspectFill
+
+    // Setup the level.
+    level = Level(filename: "Level_\(levelNumber)")
+    scene.level = level
+
+    scene.addTiles()
+    scene.swipeHandler = handleSwipe
+
+    gameOverPanel.isHidden = true
+    shuffleButton.isHidden = true
+
+    // Present the scene.
+    skView.presentScene(scene)
+
+    // Start the game.
+    beginGame()
+  }
+  
   func beginGame() {
     movesLeft = level.maximumMoves
     score = 0
     updateLabels()
     level.resetComboMultiplier()
+    scene.animateBeginGame {
+      self.shuffleButton.isHidden = false
+    }
     shuffle()
   }
 
   func shuffle() {
+    scene.removeAllPlanetSprites()
     let newPlanets = level.shuffle()
     scene.addSprites(for: newPlanets)
   }
@@ -91,6 +109,7 @@ class GameViewController: UIViewController {
     updateLabels()
     if score >= level.targetScore {
       gameOverPanel.image = UIImage(named: "LevelComplete")
+      currentLevelNumber = currentLevelNumber < numLevels ? currentLevelNumber + 1 : 1
       showGameOver()
     } else if movesLeft == 0 {
       gameOverPanel.image = UIImage(named: "GameOver")
@@ -147,9 +166,12 @@ class GameViewController: UIViewController {
   func showGameOver() {
     gameOverPanel.isHidden = false
     scene.isUserInteractionEnabled = false
+    shuffleButton.isHidden = true
 
-    self.tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideGameOver))
-    self.view.addGestureRecognizer(self.tapGestureRecognizer)
+    scene.animateGameOver {
+      self.tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideGameOver))
+      self.view.addGestureRecognizer(self.tapGestureRecognizer)
+    }
   }
   
   @objc func hideGameOver() {
@@ -159,6 +181,6 @@ class GameViewController: UIViewController {
     gameOverPanel.isHidden = true
     scene.isUserInteractionEnabled = true
 
-    beginGame()
+    setupLevel(number: currentLevelNumber)
   }
 }

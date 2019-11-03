@@ -80,18 +80,18 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.47027504280821919" colorSpace="custom" customColorSpace="sRGB"/>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LJ4-Ff-cDr">
-                                <rect key="frame" x="0.0" y="197.5" width="375" height="225"/>
+                                <rect key="frame" x="0.0" y="223.5" width="375" height="225"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="225" id="7cO-VH-3YW"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzj-sO-0hO">
-                                <rect key="frame" x="137.5" y="611" width="100" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzj-sO-0hO">
+                                <rect key="frame" x="114" y="598" width="147" height="49"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="VFm-su-lWx"/>
+                                    <constraint firstAttribute="height" constant="49" id="VFm-su-lWx"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="wNP-W8-BBF"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
                                 <state key="normal" title="SHUFFLE" backgroundImage="Button">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -104,7 +104,7 @@
                         <constraints>
                             <constraint firstItem="XdD-IS-WeP" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="8" id="3iR-hv-t2n"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="dzj-sO-0hO" secondAttribute="bottom" constant="20" id="K5o-5R-D2u"/>
-                            <constraint firstItem="LJ4-Ff-cDr" firstAttribute="top" secondItem="XdD-IS-WeP" secondAttribute="bottom" constant="89" id="QeG-wA-Jag"/>
+                            <constraint firstItem="LJ4-Ff-cDr" firstAttribute="top" secondItem="XdD-IS-WeP" secondAttribute="bottom" constant="115" id="QeG-wA-Jag"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="XdD-IS-WeP" secondAttribute="trailing" constant="8" id="cig-tA-7Me"/>
                             <constraint firstItem="dzj-sO-0hO" firstAttribute="centerX" secondItem="LJ4-Ff-cDr" secondAttribute="centerX" id="nPf-yX-WCR"/>
                             <constraint firstItem="XdD-IS-WeP" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="57" id="uU7-it-a5y"/>
@@ -146,6 +146,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Button" width="100" height="36"/>
+        <image name="Button" width="126.33333587646484" height="43"/>
     </resources>
 </document>

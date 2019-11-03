@@ -41,6 +41,7 @@ class GameScene: SKScene {
     background.size = size
     addChild(background)
     
+    gameLayer.isHidden = true
     addChild(gameLayer)
 
     let layerPosition = CGPoint(
@@ -57,7 +58,7 @@ class GameScene: SKScene {
     cropLayer.addChild(planetsLayer)
     let _ = SKLabelNode(fontNamed: "Futura-Bold")
   }
-  
+
   func addSprites(for planets: Set<Planet>) {
     for planet in planets {
       let sprite = SKSpriteNode(imageNamed: planet.planetType.spriteName)
@@ -65,9 +66,22 @@ class GameScene: SKScene {
       sprite.position = pointFor(column: planet.column, row: planet.row)
       planetsLayer.addChild(sprite)
       planet.sprite = sprite
+      // Give each cookie sprite a small, random delay. Then fade them in.
+      sprite.alpha = 0
+      sprite.xScale = 0.5
+      sprite.yScale = 0.5
+
+      sprite.run(
+        SKAction.sequence([
+          SKAction.wait(forDuration: 0.25, withRange: 0.5),
+          SKAction.group([
+            SKAction.fadeIn(withDuration: 0.25),
+            SKAction.scale(to: 1.0, duration: 0.25)
+            ])
+          ]))
     }
   }
-
+  
   private func pointFor(column: Int, row: Int) -> CGPoint {
     return CGPoint(
       x: CGFloat(column) * tileWidth + tileWidth / 2,
@@ -147,6 +161,20 @@ class GameScene: SKScene {
     selectionSprite.run(SKAction.sequence([
       SKAction.fadeOut(withDuration: 0.3),
       SKAction.removeFromParent()]))
+  }
+  
+  func animateGameOver(_ completion: @escaping () -> Void) {
+    let action = SKAction.move(by: CGVector(dx: 0, dy: -size.height), duration: 0.3)
+    action.timingMode = .easeIn
+    gameLayer.run(action, completion: completion)
+  }
+
+  func animateBeginGame(_ completion: @escaping () -> Void) {
+    gameLayer.isHidden = false
+    gameLayer.position = CGPoint(x: 0, y: size.height)
+    let action = SKAction.move(by: CGVector(dx: 0, dy: -size.height), duration: 0.3)
+    action.timingMode = .easeOut
+    gameLayer.run(action, completion: completion)
   }
   
   // Gestures
@@ -366,6 +394,10 @@ class GameScene: SKScene {
     spriteB.run(moveB)
 
     run(swapSound)
+  }
+  
+  func removeAllPlanetSprites() {
+    planetsLayer.removeAllChildren()
   }
   
 }
