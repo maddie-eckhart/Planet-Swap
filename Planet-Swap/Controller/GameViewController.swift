@@ -34,6 +34,7 @@ class GameViewController: UIViewController {
   @IBOutlet weak var movesLabel: UILabel!
   @IBOutlet weak var scoreLabel: UILabel!
   @IBOutlet weak var shuffleButton: UIButton!
+  @IBOutlet weak var nextButton: UIButton!
   
   @IBAction func shuffleButtonPressed(_: AnyObject) {
     shuffle()
@@ -79,6 +80,7 @@ class GameViewController: UIViewController {
 
     gameOverPanel.isHidden = true
     shuffleButton.isHidden = true
+    nextButton.isHidden = true
 
     // Present the scene.
     skView.presentScene(scene)
@@ -109,6 +111,8 @@ class GameViewController: UIViewController {
     updateLabels()
     if score >= level.targetScore {
       gameOverPanel.image = UIImage(named: "LevelComplete")
+      nextButton.isHidden = false
+      nextButton.isUserInteractionEnabled = false
       currentLevelNumber = currentLevelNumber < numLevels ? currentLevelNumber + 1 : 1
       showGameOver()
     } else if movesLeft == 0 {

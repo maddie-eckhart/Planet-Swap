@@ -99,16 +99,26 @@
                                     <action selector="shuffleButtonPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Upk-dE-Sm2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1me-H5-hzn">
+                                <rect key="frame" x="124" y="456.5" width="127" height="43"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
+                                <state key="normal" title="NEXT" backgroundImage="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="XdD-IS-WeP" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="8" id="3iR-hv-t2n"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="1me-H5-hzn" secondAttribute="trailing" constant="124" id="DlG-UA-7eh"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="dzj-sO-0hO" secondAttribute="bottom" constant="20" id="K5o-5R-D2u"/>
                             <constraint firstItem="LJ4-Ff-cDr" firstAttribute="top" secondItem="XdD-IS-WeP" secondAttribute="bottom" constant="115" id="QeG-wA-Jag"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="XdD-IS-WeP" secondAttribute="trailing" constant="8" id="cig-tA-7Me"/>
                             <constraint firstItem="dzj-sO-0hO" firstAttribute="centerX" secondItem="LJ4-Ff-cDr" secondAttribute="centerX" id="nPf-yX-WCR"/>
                             <constraint firstItem="XdD-IS-WeP" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="57" id="uU7-it-a5y"/>
+                            <constraint firstItem="1me-H5-hzn" firstAttribute="top" secondItem="LJ4-Ff-cDr" secondAttribute="bottom" constant="8" id="vBW-Ot-9m2"/>
                             <constraint firstItem="LJ4-Ff-cDr" firstAttribute="trailing" secondItem="4qk-I5-YsI" secondAttribute="trailing" id="wvO-Gk-XVI"/>
+                            <constraint firstItem="1me-H5-hzn" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="124" id="y8o-re-ZJ8"/>
                             <constraint firstItem="LJ4-Ff-cDr" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" id="zRd-Oc-7W0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
@@ -116,6 +126,7 @@
                     <connections>
                         <outlet property="gameOverPanel" destination="LJ4-Ff-cDr" id="FeW-ZQ-R25"/>
                         <outlet property="movesLabel" destination="kyL-yK-9Bz" id="eFA-Nf-PX8"/>
+                        <outlet property="nextButton" destination="1me-H5-hzn" id="dMj-ao-VdB"/>
                         <outlet property="scoreLabel" destination="BOa-Xw-gRp" id="EE1-ZY-zQH"/>
                         <outlet property="shuffleButton" destination="dzj-sO-0hO" id="zu6-27-f9N"/>
                         <outlet property="targetLabel" destination="xRT-0p-IaC" id="hCt-gC-XKf"/>
