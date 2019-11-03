@@ -19,9 +19,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="thr-yb-z25">
                                 <rect key="frame" x="-77" y="-69" width="528" height="804"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Planet Swap" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cm2-2n-QJ7">
-                                <rect key="frame" x="85" y="179" width="205" height="173"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planet Swap" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cm2-2n-QJ7">
+                                <rect key="frame" x="48" y="209" width="279" height="173"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="279" id="HB9-GQ-D61"/>
+                                    <constraint firstAttribute="height" constant="173" id="Xfc-hb-exJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="64"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -31,11 +34,15 @@
                         <constraints>
                             <constraint firstItem="thr-yb-z25" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="-77" id="2YU-u9-ISU"/>
                             <constraint firstItem="thr-yb-z25" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="-69" id="7hS-cN-MUK"/>
+                            <constraint firstItem="Cm2-2n-QJ7" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="209" id="F9v-B9-5gh"/>
                             <constraint firstItem="thr-yb-z25" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="-69" id="Ih3-PA-WFG"/>
                             <constraint firstItem="thr-yb-z25" firstAttribute="trailing" secondItem="Bcu-3y-fUS" secondAttribute="trailing" constant="76" id="SbL-im-l3A"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="Cm2-2n-QJ7" secondAttribute="bottom" constant="285" id="Sug-LK-Gf4"/>
+                            <constraint firstItem="Cm2-2n-QJ7" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="48" id="gX8-hM-HbW"/>
                             <constraint firstItem="thr-yb-z25" firstAttribute="bottom" secondItem="Bcu-3y-fUS" secondAttribute="bottom" constant="68" id="iga-xt-gb1"/>
                             <constraint firstItem="thr-yb-z25" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="-77" id="iuu-5e-gFV"/>
                             <constraint firstItem="thr-yb-z25" firstAttribute="trailing" secondItem="Bcu-3y-fUS" secondAttribute="trailing" constant="76" id="l5s-E1-a88"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="Cm2-2n-QJ7" secondAttribute="trailing" constant="48" id="nhT-1S-XPJ"/>
                             <constraint firstItem="thr-yb-z25" firstAttribute="bottom" secondItem="Bcu-3y-fUS" secondAttribute="bottom" constant="68" id="sFQ-MK-ha5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>

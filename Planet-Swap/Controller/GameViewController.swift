@@ -104,6 +104,7 @@ class GameViewController: UIViewController {
     scene.removeAllPlanetSprites()
     let newPlanets = level.shuffle()
     scene.addSprites(for: newPlanets)
+    level.resetComboMultiplier()
   }
   
   func decrementMoves() {
