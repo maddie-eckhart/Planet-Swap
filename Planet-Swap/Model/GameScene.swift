@@ -21,6 +21,7 @@ class GameScene: SKScene {
   let tilesLayer = SKNode()
   let cropLayer = SKCropNode()
   let maskLayer = SKNode()
+  private var selectionSprite = SKSpriteNode()
   
   // Gestures
   var swipeHandler: ((Swap) -> Void)?
@@ -126,17 +127,35 @@ class GameScene: SKScene {
     }
   }
   
+  func showSelectionIndicator(of planet: Planet) {
+    if selectionSprite.parent != nil {
+      selectionSprite.removeFromParent()
+    }
+
+    if let sprite = planet.sprite {
+      let texture = SKTexture(imageNamed: planet.planetType.highlightedSpriteName)
+      selectionSprite.size = CGSize(width: tileWidth, height: tileHeight)
+      selectionSprite.run(SKAction.setTexture(texture))
+
+      sprite.addChild(selectionSprite)
+      selectionSprite.alpha = 1.0
+    }
+  }
+  
+  func hideSelectionIndicator() {
+    selectionSprite.run(SKAction.sequence([
+      SKAction.fadeOut(withDuration: 0.3),
+      SKAction.removeFromParent()]))
+  }
+  
   // Gestures
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    // 1
     guard let touch = touches.first else { return }
     let location = touch.location(in: planetsLayer)
-    // 2
     let (success, column, row) = convertPoint(location)
     if success {
-      // 3
       if let planet = level.planet(atColumn: column, row: row) {
-        // 4
+        showSelectionIndicator(of: planet)
         swipeFromColumn = column
         swipeFromRow = row
       }
@@ -144,17 +163,15 @@ class GameScene: SKScene {
   }
   
   override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-    // 1
+
     guard swipeFromColumn != nil else { return }
 
-    // 2
     guard let touch = touches.first else { return }
     let location = touch.location(in: planetsLayer)
 
     let (success, column, row) = convertPoint(location)
     if success {
 
-      // 3
       var horizontalDelta = 0, verticalDelta = 0
       if column < swipeFromColumn! {          // swipe left
         horizontalDelta = -1
@@ -166,10 +183,9 @@ class GameScene: SKScene {
         verticalDelta = 1
       }
 
-      // 4
       if horizontalDelta != 0 || verticalDelta != 0 {
         trySwap(horizontalDelta: horizontalDelta, verticalDelta: verticalDelta)
-        // 5
+        hideSelectionIndicator()
         swipeFromColumn = nil
       }
     }
@@ -193,7 +209,31 @@ class GameScene: SKScene {
     }
   }
   
+  func animateInvalidSwap(_ swap: Swap, completion: @escaping () -> Void) {
+    let spriteA = swap.planetA.sprite!
+    let spriteB = swap.planetB.sprite!
+
+    spriteA.zPosition = 100
+    spriteB.zPosition = 90
+
+    let duration: TimeInterval = 0.2
+
+    let moveA = SKAction.move(to: spriteB.position, duration: duration)
+    moveA.timingMode = .easeOut
+
+    let moveB = SKAction.move(to: spriteA.position, duration: duration)
+    moveB.timingMode = .easeOut
+
+    spriteA.run(SKAction.sequence([moveA, moveB]), completion: completion)
+    spriteB.run(SKAction.sequence([moveB, moveA]))
+
+    run(invalidSwapSound)
+  }
+  
   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    if selectionSprite.parent != nil && swipeFromColumn != nil {
+      hideSelectionIndicator()
+    }
     swipeFromColumn = nil
     swipeFromRow = nil
   }

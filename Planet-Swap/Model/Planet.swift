@@ -9,7 +9,7 @@ enum PlanetType: Int {
   }
 
   var highlightedSpriteName: String {
-    return spriteName + "-Highlighted"
+    return spriteName + "-highlight"
   }
   
   static func random() -> PlanetType {
