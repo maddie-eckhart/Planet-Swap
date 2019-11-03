@@ -271,4 +271,69 @@ class Level {
       }
     }
   }
+  
+  func fillHoles() -> [[Planet]] {
+      var columns: [[Planet]] = []
+      // 1
+      for column in 0..<numColumns {
+        var array: [Planet] = []
+        for row in 0..<numRows {
+          // 2
+          if tiles[column, row] != nil && planets[column, row] == nil {
+            // 3
+            for lookup in (row + 1)..<numRows {
+              if let planet = planets[column, lookup] {
+                // 4
+                planets[column, lookup] = nil
+                planets[column, row] = planet
+                planet.row = row
+                // 5
+                array.append(planet)
+                // 6
+                break
+              }
+            }
+          }
+        }
+        // 7
+        if !array.isEmpty {
+          columns.append(array)
+        }
+      }
+      return columns
+  }
+  
+  func topUpPlanets() -> [[Planet]] {
+    var columns: [[Planet]] = []
+    var planetType: PlanetType = .unknown
+
+    for column in 0..<numColumns {
+      var array: [Planet] = []
+
+      // 1
+      var row = numRows - 1
+      while row >= 0 && planets[column, row] == nil {
+        // 2
+        if tiles[column, row] != nil {
+          // 3
+          var newPlanetType: PlanetType
+          repeat {
+            newPlanetType = PlanetType.random()
+          } while newPlanetType == planetType
+          planetType = newPlanetType
+          // 4
+          let planet = Planet(column: column, row: row, planetType: planetType)
+          planets[column, row] = planet
+          array.append(planet)
+        }
+
+        row -= 1
+      }
+      // 5
+      if !array.isEmpty {
+        columns.append(array)
+      }
+    }
+    return columns
+  }
 }
