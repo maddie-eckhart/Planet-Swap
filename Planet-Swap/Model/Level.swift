@@ -9,6 +9,22 @@ class Level {
   private var tiles = Array2D<Tile>(columns: numColumns, rows: numRows)
   private var possibleSwaps: Set<Swap> = []
   
+  var targetScore = 0
+  var maximumMoves = 0
+  private var comboMultiplier = 0
+  
+  private func calculateScores(for chains: Set<Chain>) {
+    // 3-chain is 60 pts, 4-chain is 120, 5-chain is 180, and so on
+    for chain in chains {
+      chain.score = 60 * (chain.length - 2) * comboMultiplier
+      comboMultiplier += 1
+    }
+  }
+  
+  func resetComboMultiplier() {
+    comboMultiplier = 1
+  }
+  
   func planet(atColumn column: Int, row: Int) -> Planet? {
     precondition(column >= 0 && column < numColumns)
     precondition(row >= 0 && row < numRows)
@@ -58,21 +74,19 @@ class Level {
   }
   
   init(filename: String) {
-    // 1
     guard let levelData = LevelData.loadFrom(file: filename) else { return }
-    // 2
     let tilesArray = levelData.tiles
-    // 3
+
     for (row, rowArray) in tilesArray.enumerated() {
-      // 4
       let tileRow = numRows - row - 1
-      // 5
       for (column, value) in rowArray.enumerated() {
         if value == 1 {
           tiles[column, tileRow] = Tile()
         }
       }
     }
+    targetScore = levelData.targetScore
+    maximumMoves = levelData.moves
   }
   
   private func hasChain(atColumn column: Int, row: Int) -> Bool {
@@ -180,6 +194,8 @@ class Level {
     removePlanets(in: horizontalChains)
     removePlanets(in: verticalChains)
 
+    calculateScores(for: horizontalChains)
+    calculateScores(for: verticalChains)
     return horizontalChains.union(verticalChains)
   }
   

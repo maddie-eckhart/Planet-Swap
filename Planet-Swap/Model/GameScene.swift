@@ -55,6 +55,7 @@ class GameScene: SKScene {
     
     planetsLayer.position = layerPosition
     cropLayer.addChild(planetsLayer)
+    let _ = SKLabelNode(fontNamed: "Futura-Bold")
   }
   
   func addSprites(for planets: Set<Planet>) {
@@ -211,6 +212,7 @@ class GameScene: SKScene {
   
   func animateMatchedPlanets(for chains: Set<Chain>, completion: @escaping () -> Void) {
     for chain in chains {
+      animateScore(for: chain)
       for planet in chain.planets {
         if let sprite = planet.sprite {
           if sprite.action(forKey: "removing") == nil {
@@ -311,6 +313,27 @@ class GameScene: SKScene {
     }
     // 7
     run(SKAction.wait(forDuration: longestDuration), completion: completion)
+  }
+  
+  func animateScore(for chain: Chain) {
+    // Figure out what the midpoint of the chain is.
+    let firstSprite = chain.firstPlanet().sprite!
+    let lastSprite = chain.lastPlanet().sprite!
+    let centerPosition = CGPoint(
+      x: (firstSprite.position.x + lastSprite.position.x)/2,
+      y: (firstSprite.position.y + lastSprite.position.y)/2 - 8)
+
+    // Add a label for the score that slowly floats up.
+    let scoreLabel = SKLabelNode(fontNamed: "Futura-Bold")
+    scoreLabel.fontSize = 16
+    scoreLabel.text = String(format: "%ld", chain.score)
+    scoreLabel.position = centerPosition
+    scoreLabel.zPosition = 300
+    planetsLayer.addChild(scoreLabel)
+
+    let moveAction = SKAction.move(by: CGVector(dx: 0, dy: 3), duration: 0.7)
+    moveAction.timingMode = .easeOut
+    scoreLabel.run(SKAction.sequence([moveAction, SKAction.removeFromParent()]))
   }
   
   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

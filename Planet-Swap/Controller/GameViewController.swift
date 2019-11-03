@@ -13,6 +13,7 @@ class GameViewController: UIViewController {
   var movesLeft = 0
   var score = 0
   
+  var tapGestureRecognizer: UITapGestureRecognizer!
   lazy var backgroundMusic: AVAudioPlayer? = {
     guard let url = Bundle.main.url(forResource: "Mining by Moonlight", withExtension: "mp3") else {
       return nil
@@ -41,6 +42,7 @@ class GameViewController: UIViewController {
     // Configure the view
     let skView = view as! SKView
     skView.isMultipleTouchEnabled = false
+    gameOverPanel.isHidden = true
     
     // Create and configure the scene.
     scene = GameScene(size: skView.bounds.size)
@@ -72,12 +74,28 @@ class GameViewController: UIViewController {
   }
   
   func beginGame() {
+    movesLeft = level.maximumMoves
+    score = 0
+    updateLabels()
+    level.resetComboMultiplier()
     shuffle()
   }
 
   func shuffle() {
     let newPlanets = level.shuffle()
     scene.addSprites(for: newPlanets)
+  }
+  
+  func decrementMoves() {
+    movesLeft -= 1
+    updateLabels()
+    if score >= level.targetScore {
+      gameOverPanel.image = UIImage(named: "LevelComplete")
+      showGameOver()
+    } else if movesLeft == 0 {
+      gameOverPanel.image = UIImage(named: "GameOver")
+      showGameOver()
+    }
   }
   
   func handleSwipe(_ swap: Swap) {
@@ -100,6 +118,10 @@ class GameViewController: UIViewController {
       return
     }
     scene.animateMatchedPlanets(for: chains) {
+      for chain in chains {
+        self.score += chain.score
+      }
+      self.updateLabels()
       let columns = self.level.fillHoles()
       self.scene.animateFallingPlanets(in: columns) {
         let columns = self.level.topUpPlanets()
@@ -113,5 +135,30 @@ class GameViewController: UIViewController {
   func beginNextTurn() {
     level.detectPossibleSwaps()
     view.isUserInteractionEnabled = true
+    decrementMoves()
+  }
+  
+  func updateLabels() {
+    targetLabel.text = String(format: "%ld", level.targetScore)
+    movesLabel.text = String(format: "%ld", movesLeft)
+    scoreLabel.text = String(format: "%ld", score)
+  }
+  
+  func showGameOver() {
+    gameOverPanel.isHidden = false
+    scene.isUserInteractionEnabled = false
+
+    self.tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideGameOver))
+    self.view.addGestureRecognizer(self.tapGestureRecognizer)
+  }
+  
+  @objc func hideGameOver() {
+    view.removeGestureRecognizer(tapGestureRecognizer)
+    tapGestureRecognizer = nil
+
+    gameOverPanel.isHidden = true
+    scene.isUserInteractionEnabled = true
+
+    beginGame()
   }
 }

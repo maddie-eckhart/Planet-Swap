@@ -1,5 +1,6 @@
 class Chain: Hashable, CustomStringConvertible {
   var planets: [Planet] = []
+  var score = 0
 
   enum ChainType: CustomStringConvertible {
     case horizontal
