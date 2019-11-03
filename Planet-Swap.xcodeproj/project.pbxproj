@@ -32,6 +32,7 @@
 		C1176E2C236E3E4E0099576F /* Swap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1176E2B236E3E4E0099576F /* Swap.swift */; };
 		C12737BB236E524800483A95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17A7E57B1FB513CC0044C48F /* Main.storyboard */; };
 		C12737BD236E528C00483A95 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12737BC236E528B00483A95 /* Tile.swift */; };
+		C12737BF236E7A2900483A95 /* Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12737BE236E7A2900483A95 /* Chain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		C1176E29236E0BC10099576F /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		C1176E2B236E3E4E0099576F /* Swap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swap.swift; sourceTree = "<group>"; };
 		C12737BC236E528B00483A95 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		C12737BE236E7A2900483A95 /* Chain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				17A7E5771FB513CC0044C48F /* GameScene.swift */,
+				C12737BE236E7A2900483A95 /* Chain.swift */,
 				C1176E2B236E3E4E0099576F /* Swap.swift */,
 				1769DFF81FE3818B00F99A23 /* LevelData.swift */,
 				1769DFFA1FE383BA00F99A23 /* Array2D.swift */,
@@ -198,6 +201,7 @@
 				TargetAttributes = {
 					17A7E56D1FB513CC0044C48F = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1120;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -256,6 +260,7 @@
 				1769DFF91FE3818B00F99A23 /* LevelData.swift in Sources */,
 				C1176E28236E023A0099576F /* Planet.swift in Sources */,
 				17A7E57A1FB513CC0044C48F /* GameViewController.swift in Sources */,
+				C12737BF236E7A2900483A95 /* Chain.swift in Sources */,
 				C1176E2A236E0BC10099576F /* Level.swift in Sources */,
 				C12737BD236E528C00483A95 /* Tile.swift in Sources */,
 				17A7E5721FB513CC0044C48F /* AppDelegate.swift in Sources */,
@@ -398,7 +403,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PlanetSwap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -413,7 +418,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PlanetSwap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

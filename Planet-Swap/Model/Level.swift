@@ -115,6 +115,74 @@ class Level {
     return verticalLength >= 3
   }
   
+  private func detectHorizontalMatches() -> Set<Chain> {
+    // 1
+    var set: Set<Chain> = []
+    // 2
+    for row in 0..<numRows {
+      var column = 0
+      while column < numColumns-2 {
+        // 3
+        if let planet = planets[column, row] {
+          let matchType = planet.planetType
+          // 4
+          if planets[column + 1, row]?.planetType == matchType &&
+            planets[column + 2, row]?.planetType == matchType {
+            // 5
+            let chain = Chain(chainType: .horizontal)
+            repeat {
+              chain.add(planet: planets[column, row]!)
+              column += 1
+            } while column < numColumns && planets[column, row]?.planetType == matchType
+
+            set.insert(chain)
+            continue
+          }
+        }
+        // 6
+        column += 1
+      }
+    }
+    return set
+  }
+  
+  private func detectVerticalMatches() -> Set<Chain> {
+    var set: Set<Chain> = []
+
+    for column in 0..<numColumns {
+      var row = 0
+      while row < numRows-2 {
+        if let planet = planets[column, row] {
+          let matchType = planet.planetType
+
+          if planets[column, row + 1]?.planetType == matchType &&
+            planets[column, row + 2]?.planetType == matchType {
+            let chain = Chain(chainType: .vertical)
+            repeat {
+              chain.add(planet: planets[column, row]!)
+              row += 1
+            } while row < numRows && planets[column, row]?.planetType == matchType
+
+            set.insert(chain)
+            continue
+          }
+        }
+        row += 1
+      }
+    }
+    return set
+  }
+  
+  func removeMatches() -> Set<Chain> {
+    let horizontalChains = detectHorizontalMatches()
+    let verticalChains = detectVerticalMatches()
+
+    removePlanets(in: horizontalChains)
+    removePlanets(in: verticalChains)
+
+    return horizontalChains.union(verticalChains)
+  }
+  
   func detectPossibleSwaps() {
     var set: Set<Swap> = []
 
@@ -196,4 +264,11 @@ class Level {
     swap.planetA.row = rowB
   }
   
+  private func removePlanets(in chains: Set<Chain>) {
+    for chain in chains {
+      for planet in chain.planets {
+        planets[planet.column, planet.row] = nil
+      }
+    }
+  }
 }
