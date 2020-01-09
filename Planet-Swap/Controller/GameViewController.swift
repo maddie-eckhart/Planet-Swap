@@ -15,18 +15,19 @@ class GameViewController: UIViewController {
   var currentLevelNumber = 1
   
   var tapGestureRecognizer: UITapGestureRecognizer!
-  lazy var backgroundMusic: AVAudioPlayer? = {
-    guard let url = Bundle.main.url(forResource: "EpicSpace", withExtension: "wav") else {
-      return nil
-    }
-    do {
-      let player = try AVAudioPlayer(contentsOf: url)
-      player.numberOfLoops = -1
-      return player
-    } catch {
-      return nil
-    }
-  }()
+  lazy var backgroundMusic: AVAudioPlayer? = nil
+//    {
+//    guard let url = Bundle.main.url(forResource: "EpicSpace", withExtension: "wav") else {
+//      return nil
+//    }
+//    do {
+//      let player = try AVAudioPlayer(contentsOf: url)
+//      player.numberOfLoops = -1
+//      return player
+//    } catch {
+//      return nil
+//    }
+//  }()
   
   // MARK: IBOutlets
   @IBOutlet weak var gameOverPanel: UIImageView!
