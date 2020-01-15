@@ -2,9 +2,9 @@ import SpriteKit
 
 // MARK: - PlanetType
 enum PlanetType: Int {
-  case unknown = 0, blue, red, brown, green, purple, asteroid //gold
+  case unknown = 0, blue, red, brown, rocket, moon, asteroid //gold, purple, green
   var spriteName: String {
-    let spriteNames = ["blue","red","brown","green","purple","asteroid"] //"gold"
+    let spriteNames = ["blue","red","brown","rocket","moon","asteroid"] //"gold", "purple", "green"
     return spriteNames[rawValue - 1]
   }
 
