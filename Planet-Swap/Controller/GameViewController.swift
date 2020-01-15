@@ -44,11 +44,12 @@ class GameViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Setup view with level 1
+    self.view.backgroundColor = UIColor(red: 1, green: 1, blue: 179/255, alpha: 1)
+    //self.backgroundColor = UIColor(red: 255/255, green: 225/255, blue: 179/255, alpha: 1)
+
     setupLevel(number: currentLevelNumber)
     
-    // Start the background music.
+    // Start the background music
     backgroundMusic?.play()
   }
   
@@ -71,6 +72,7 @@ class GameViewController: UIViewController {
     // Create and configure the scene.
     scene = GameScene(size: skView.bounds.size)
     scene.scaleMode = .aspectFill
+    scene.backgroundColor = UIColor(red: 255/255, green: 225/255, blue: 179/255, alpha: 1)
 
     // Setup the level.
     level = Level(filename: "Level_\(levelNumber)")

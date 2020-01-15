@@ -5,6 +5,7 @@ class LobbyViewController: UIViewController {
   @IBAction func Play(sender: AnyObject) {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let vc = storyboard.instantiateViewController(withIdentifier: "GameVC")
+    vc.modalPresentationStyle = .fullScreen
     self.present(vc, animated: true, completion: nil);
     
     if #available(iOS 13.0, *) {
