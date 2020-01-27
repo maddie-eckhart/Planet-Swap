@@ -1,2 +1,4 @@
 # Planet-Swap
-HACK OHI/O project. It's like Candy Crush, but with planets.
+It's like Candy Crush, but with planets.
+
+Originally created at Hack OHI/O, it has potential.
