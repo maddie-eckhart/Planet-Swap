@@ -23,7 +23,7 @@ class LobbyViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = UIColor(red: 255/255, green: 225/255, blue: 179/255, alpha: 1)
+    view.backgroundColor = UIColor(red: 32/255, green: 9/255, blue: 112/255, alpha: 1)
   }
 
 }

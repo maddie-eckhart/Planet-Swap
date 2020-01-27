@@ -44,8 +44,6 @@ class GameViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.view.backgroundColor = UIColor(red: 1, green: 1, blue: 179/255, alpha: 1)
-    //self.backgroundColor = UIColor(red: 255/255, green: 225/255, blue: 179/255, alpha: 1)
 
     setupLevel(number: currentLevelNumber)
     
@@ -72,7 +70,7 @@ class GameViewController: UIViewController {
     // Create and configure the scene.
     scene = GameScene(size: skView.bounds.size)
     scene.scaleMode = .aspectFill
-    scene.backgroundColor = UIColor(red: 255/255, green: 225/255, blue: 179/255, alpha: 1)
+    scene.backgroundColor = UIColor(red: 32/255, green: 9/255, blue: 112/255, alpha: 1)
 
     // Setup the level.
     level = Level(filename: "Level_\(levelNumber)")
