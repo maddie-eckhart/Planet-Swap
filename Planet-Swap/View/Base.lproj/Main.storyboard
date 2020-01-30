@@ -18,6 +18,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planet Swap" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rc2-gB-YGM">
                                 <rect key="frame" x="89.5" y="118" width="196" height="219"/>
+                                <color key="backgroundColor" red="0.1283361912" green="0.035825576630000001" blue="0.43912744520000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="196" id="AI3-6g-YSe"/>
                                     <constraint firstAttribute="width" secondItem="Rc2-gB-YGM" secondAttribute="height" multiplier="196:219" id="E1b-ba-vNb"/>

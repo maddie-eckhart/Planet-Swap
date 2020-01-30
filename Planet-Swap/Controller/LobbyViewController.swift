@@ -48,6 +48,7 @@ class LobbyViewController: UIViewController {
       let yPosition = view!.frame.midY - viewMidY + CGFloat(arc4random_uniform(UInt32(viewMidY*2)))
 
       shapeLayer.position = CGPoint(x: xPosition, y: yPosition)
+      shapeLayer.zPosition = -10
     }
   }
 
