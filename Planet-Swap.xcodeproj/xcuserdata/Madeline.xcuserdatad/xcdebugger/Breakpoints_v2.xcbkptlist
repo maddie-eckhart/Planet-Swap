@@ -66,86 +66,22 @@
             endingLineNumber = "179"
             landmarkName = "showGameOver()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4AFA5E94-94FA-42C9-A571-CDEF38144E30 - 10d611a334edd6b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Planet_Swap.GameViewController.showGameOver() -&gt; ()"
-                  moduleName = "Planet-Swap"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Madeline/Documents/MaddGaming/Planet-Swap/CookieCrunchStarter/Planet-Swap/Controller/GameViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "178"
-                  endingLineNumber = "178"
-                  offsetFromSymbolStart = "668">
-               </Location>
-               <Location
-                  uuid = "4AFA5E94-94FA-42C9-A571-CDEF38144E30 - 72847947a46e9777"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in Planet_Swap.GameViewController.showGameOver() -&gt; ()"
-                  moduleName = "Planet-Swap"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Madeline/Documents/MaddGaming/Planet-Swap/CookieCrunchStarter/Planet-Swap/Controller/GameViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "179"
-                  endingLineNumber = "179"
-                  offsetFromSymbolStart = "56">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6C3CDA31-1680-432F-8304-3E0F1BBD26F7"
+            uuid = "28B55299-4660-4A58-B336-6A3C841FC1EB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Planet-Swap/Controller/GameViewController.swift"
+            filePath = "Planet-Swap/Model/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "GameViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "6C3CDA31-1680-432F-8304-3E0F1BBD26F7 - d5b2fd7d87753444"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Planet_Swap.GameViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Planet_Swap.GameViewController"
-                  moduleName = "Planet-Swap"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Madeline/Documents/MaddGaming/Planet-Swap/CookieCrunchStarter/Planet-Swap/Controller/GameViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "762">
-               </Location>
-               <Location
-                  uuid = "6C3CDA31-1680-432F-8304-3E0F1BBD26F7 - 81302916cb2844b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Planet_Swap.GameViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Planet_Swap.GameViewController&gt;"
-                  moduleName = "Planet-Swap"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Madeline/Documents/MaddGaming/Planet-Swap/CookieCrunchStarter/Planet-Swap/Controller/GameViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "693">
-               </Location>
-            </Locations>
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "drawSceneStars()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

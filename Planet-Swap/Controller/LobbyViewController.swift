@@ -55,6 +55,7 @@ extension UIView {
     }
   
   func drawStars(midX: CGFloat, midY: CGFloat) {
+    // large stars
     for _ in 1...100 {
       let starPath = UIBezierPath(arcCenter: CGPoint(x: -self.frame.width * 10, y: -self.frame.height * 10), radius: CGFloat(3), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
       let skyLayer = CAShapeLayer()
@@ -67,9 +68,8 @@ extension UIView {
       let yPosition = midY - midY + CGFloat(arc4random_uniform(UInt32(midY*2)))
 
       skyLayer.position = CGPoint(x: xPosition, y: yPosition)
-      skyLayer.zPosition = -10
     }
-    
+    // small stars
     for _ in 1...200 {
       let starPath = UIBezierPath(arcCenter: CGPoint(x: -self.frame.width * 10, y: -self.frame.height * 10), radius: CGFloat(1), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
       let skyLayer = CAShapeLayer()
@@ -82,7 +82,7 @@ extension UIView {
       let yPosition = midY - midY + CGFloat(arc4random_uniform(UInt32(midY*2)))
 
       skyLayer.position = CGPoint(x: xPosition, y: yPosition)
-      skyLayer.zPosition = -10
+
     }
   }
 }
