@@ -28,13 +28,11 @@ class LobbyViewController: UIViewController {
     let viewMidX = view!.bounds.midX * 2
     let viewMidY = view!.bounds.midY * 2
     
-    let viewWidth = view.frame.width
-    let viewHeight = view.frame.height
-    
     let skyView = UIView(frame: CGRect(x: view.bounds.width/2, y: view.bounds.height/2, width: 50, height: 50))
     //skyView.backgroundColor = UIColor.red
     skyView.drawStars(midX: viewMidX, midY: viewMidY)
     skyView.rotate360Degrees(duration: 190)
+    skyView.layer.zPosition = -10
     self.view.addSubview(skyView)
     
   }
