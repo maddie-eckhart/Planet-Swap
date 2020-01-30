@@ -50,9 +50,10 @@ class GameScene: SKScene {
     
     anchorPoint = CGPoint(x: 0.5, y: 0.5)
     
-    let background = SKSpriteNode(imageNamed: "Background")
-    //background.size = size
-    addChild(background)
+//    let background = SKSpriteNode(imageNamed: "Background")
+//    background.size = size
+//    addChild(background)
+    drawStars()
     
     gameLayer.isHidden = true
     addChild(gameLayer)
@@ -72,6 +73,21 @@ class GameScene: SKScene {
     let _ = SKLabelNode(fontNamed: "Futura-Bold")
   }
 
+   func drawStars() {
+    let viewMidX = frame.height/2 + 100
+    let viewMidY = frame.width/2 + 100
+
+    for _ in 1...50 {
+      let star = SKShapeNode(circleOfRadius: 3)
+      let xPosition = frame.midX - viewMidX + CGFloat(arc4random_uniform(UInt32(viewMidX*2)))
+      let yPosition = frame.midY - viewMidY + CGFloat(arc4random_uniform(UInt32(viewMidY*2)))
+      star.position = CGPoint(x: xPosition, y: yPosition)
+      star.glowWidth = 1.0
+      star.fillColor = SKColor.white
+      self.addChild(star)
+    }
+  }
+  
   func addSprites(for planets: Set<Planet>) {
     for planet in planets {
       let sprite = SKSpriteNode(imageNamed: planet.planetType.spriteName)
