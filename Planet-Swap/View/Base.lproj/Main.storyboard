@@ -26,11 +26,11 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gOj-85-PAa">
-                                <rect key="frame" x="124.5" y="396" width="126.5" height="150.5"/>
+                            <stackView opaque="NO" tag="5" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gOj-85-PAa">
+                                <rect key="frame" x="124" y="397" width="127" height="149"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPo-f3-Rik" userLabel="START">
-                                        <rect key="frame" x="0.0" y="0.0" width="126.5" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="127" height="43"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="PLAY" backgroundImage="Button">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -40,7 +40,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ij5-Ub-oiR" userLabel="OPTIONS">
-                                        <rect key="frame" x="0.0" y="53.5" width="126.5" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="53" width="127" height="43"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="OPTIONS" backgroundImage="Button">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,7 +50,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0un-Ee-uwP" userLabel="QUIT">
-                                        <rect key="frame" x="0.0" y="107" width="126.5" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="106" width="127" height="43"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="QUIT" backgroundImage="Button">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -162,7 +162,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1me-H5-hzn">
-                                <rect key="frame" x="124" y="465" width="127" height="43.5"/>
+                                <rect key="frame" x="124" y="465" width="127" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="NEXT" backgroundImage="Button">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -220,6 +220,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Button" width="126.33333587646484" height="43.666667938232422"/>
+        <image name="Button" width="127" height="43"/>
     </resources>
 </document>

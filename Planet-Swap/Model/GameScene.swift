@@ -3,7 +3,7 @@ import GameplayKit
 import AVFoundation
 
 class GameScene: SKScene {
-  // Sound FX
+  //MARK: Sound FX
   let swapSound = SKAction.playSoundFileNamed("Chomp.wav", waitForCompletion: false)
   let invalidSwapSound = SKAction.playSoundFileNamed("Error.wav", waitForCompletion: false)
   let matchSound = SKAction.playSoundFileNamed("Explosion.wav", waitForCompletion: false)
@@ -30,13 +30,13 @@ class GameScene: SKScene {
   let gameLayer = SKNode()
   let planetsLayer = SKNode()
   
-  // Tile backgrounds
+  //MARK: Tile backgrounds
   let tilesLayer = SKNode()
   let cropLayer = SKCropNode()
   let maskLayer = SKNode()
   private var selectionSprite = SKSpriteNode()
   
-  // Gestures
+  //MARK: Gestures
   var swipeHandler: ((Swap) -> Void)?
   private var swipeFromColumn: Int?
   private var swipeFromRow: Int?
@@ -51,7 +51,7 @@ class GameScene: SKScene {
     anchorPoint = CGPoint(x: 0.5, y: 0.5)
     
     let background = SKSpriteNode(imageNamed: "Background")
-    background.size = size
+    //background.size = size
     addChild(background)
     
     gameLayer.isHidden = true

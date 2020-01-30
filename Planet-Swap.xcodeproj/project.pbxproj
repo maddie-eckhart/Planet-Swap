@@ -45,7 +45,7 @@
 		170D54271FB6919C00BB205A /* Grid.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Grid.atlas; sourceTree = "<group>"; };
 		1769DFF81FE3818B00F99A23 /* LevelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelData.swift; sourceTree = "<group>"; };
 		1769DFFA1FE383BA00F99A23 /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
-		17A7E56E1FB513CC0044C48F /* Planet-Swap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Planet-Swap.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		17A7E56E1FB513CC0044C48F /* Planet Swap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Planet Swap.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17A7E5711FB513CC0044C48F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17A7E5771FB513CC0044C48F /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		17A7E5791FB513CC0044C48F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 		17A7E56F1FB513CC0044C48F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				17A7E56E1FB513CC0044C48F /* Planet-Swap.app */,
+				17A7E56E1FB513CC0044C48F /* Planet Swap.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -204,7 +204,7 @@
 			);
 			name = "Planet-Swap";
 			productName = CookieCrunch;
-			productReference = 17A7E56E1FB513CC0044C48F /* Planet-Swap.app */;
+			productReference = 17A7E56E1FB513CC0044C48F /* Planet Swap.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -426,7 +426,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Planet-Swap/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PlanetSwap;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Planet Swap";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -441,7 +441,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Planet-Swap/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PlanetSwap;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Planet Swap";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
