@@ -16,10 +16,24 @@ class LobbyViewController: UIViewController {
   }
   
   @IBAction func Options(_ sender: Any) {
+    let optionsAlert = SpaceAlert()
+    view.addSubview(optionsAlert)
+    OptionsAlert.isHidden = false
   }
   
-  @IBAction func Quit(_ sender: Any) {
+  @IBAction func Connect(_ sender: Any) {
+    let twitterHandle =  "PlanetSwapGame"
+    let appURL = NSURL(string: "twitter://user?screen_name=\(twitterHandle)")!
+    let webURL = NSURL(string: "https://twitter.com/\(twitterHandle)")!
+    let application = UIApplication.shared
+    if application.canOpenURL(appURL as URL) {
+         application.open(appURL as URL)
+    } else {
+         application.open(webURL as URL)
+    }
   }
+  
+  @IBOutlet weak var OptionsAlert: SpaceAlert!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -35,6 +49,7 @@ class LobbyViewController: UIViewController {
     skyView.layer.zPosition = -10
     self.view.addSubview(skyView)
     
+    OptionsAlert.isHidden = true
   }
 
 }

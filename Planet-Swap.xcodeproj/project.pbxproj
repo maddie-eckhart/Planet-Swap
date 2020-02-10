@@ -39,6 +39,8 @@
 		C14F4A41236F181F0087BCC1 /* EpicSpace.wav in Resources */ = {isa = PBXBuildFile; fileRef = C14F4A40236F181F0087BCC1 /* EpicSpace.wav */; };
 		C14F4A43236F19330087BCC1 /* Sad_Trombone.wav in Resources */ = {isa = PBXBuildFile; fileRef = C14F4A42236F19330087BCC1 /* Sad_Trombone.wav */; };
 		C14F4A45236F20570087BCC1 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14F4A44236F20570087BCC1 /* LobbyViewController.swift */; };
+		C178FFCC23E3524800FB8A02 /* SpaceAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = C178FFCB23E3524800FB8A02 /* SpaceAlert.xib */; };
+		C178FFCE23E352E300FB8A02 /* SpaceAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C178FFCD23E352E300FB8A02 /* SpaceAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		C14F4A40236F181F0087BCC1 /* EpicSpace.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = EpicSpace.wav; sourceTree = "<group>"; };
 		C14F4A42236F19330087BCC1 /* Sad_Trombone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Sad_Trombone.wav; sourceTree = "<group>"; };
 		C14F4A44236F20570087BCC1 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
+		C178FFCB23E3524800FB8A02 /* SpaceAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpaceAlert.xib; sourceTree = "<group>"; };
+		C178FFCD23E352E300FB8A02 /* SpaceAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +178,8 @@
 			children = (
 				17A7E57B1FB513CC0044C48F /* Main.storyboard */,
 				186E13E02069D3DE003EBCA0 /* LaunchScreen.storyboard */,
+				C178FFCB23E3524800FB8A02 /* SpaceAlert.xib */,
+				C178FFCD23E352E300FB8A02 /* SpaceAlert.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -258,6 +264,7 @@
 				17A7E5971FB525F30044C48F /* Level_4.json in Resources */,
 				17A7E5AF1FB53C850044C48F /* Chomp.wav in Resources */,
 				17A7E59A1FB525F30044C48F /* Level_0.json in Resources */,
+				C178FFCC23E3524800FB8A02 /* SpaceAlert.xib in Resources */,
 				186E13E12069D3DF003EBCA0 /* LaunchScreen.storyboard in Resources */,
 				17A7E5991FB525F30044C48F /* Level_2.json in Resources */,
 				17A7E5B01FB53C850044C48F /* Error.wav in Resources */,
@@ -281,6 +288,7 @@
 				17A7E5781FB513CC0044C48F /* GameScene.swift in Sources */,
 				1769DFFB1FE383BA00F99A23 /* Array2D.swift in Sources */,
 				1769DFF91FE3818B00F99A23 /* LevelData.swift in Sources */,
+				C178FFCE23E352E300FB8A02 /* SpaceAlert.swift in Sources */,
 				C1176E28236E023A0099576F /* Planet.swift in Sources */,
 				17A7E57A1FB513CC0044C48F /* GameViewController.swift in Sources */,
 				C12737BF236E7A2900483A95 /* Chain.swift in Sources */,

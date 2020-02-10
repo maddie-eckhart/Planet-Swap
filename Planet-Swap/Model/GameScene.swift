@@ -56,7 +56,6 @@ class GameScene: SKScene {
  
     drawSceneStars()
     
-    
     gameLayer.isHidden = true
     addChild(gameLayer)
 
@@ -84,7 +83,6 @@ class GameScene: SKScene {
       let xPosition = frame.midX - viewMidX + CGFloat(arc4random_uniform(UInt32(viewMidX*2)))
       let yPosition = frame.midY - viewMidY + CGFloat(arc4random_uniform(UInt32(viewMidY*2)))
       star.position = CGPoint(x: xPosition, y: yPosition)
-      //star.glowWidth = 1.0
       star.fillColor = SKColor.white
       self.addChild(star)
     }

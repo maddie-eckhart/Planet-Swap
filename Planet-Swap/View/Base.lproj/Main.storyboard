@@ -18,7 +18,6 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planet Swap" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rc2-gB-YGM">
                                 <rect key="frame" x="89.5" y="118" width="196" height="219"/>
-                                <color key="backgroundColor" red="0.1283361912" green="0.035825576630000001" blue="0.43912744520000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="196" id="AI3-6g-YSe"/>
                                     <constraint firstAttribute="width" secondItem="Rc2-gB-YGM" secondAttribute="height" multiplier="196:219" id="E1b-ba-vNb"/>
@@ -50,18 +49,24 @@
                                             <action selector="Options:" destination="rT6-hQ-6Xg" eventType="touchUpInside" id="jNR-7i-PbW"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0un-Ee-uwP" userLabel="QUIT">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0un-Ee-uwP" userLabel="CONNECT">
                                         <rect key="frame" x="0.0" y="106" width="127" height="43"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="QUIT" backgroundImage="Button">
+                                        <state key="normal" title="CONNECT" backgroundImage="Button">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="Connect:" destination="rT6-hQ-6Xg" eventType="touchUpInside" id="8Yf-xM-5qj"/>
                                             <action selector="Quit:" destination="rT6-hQ-6Xg" eventType="touchUpInside" id="oKS-aw-VNh"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="an8-WA-leG" userLabel="OptionsView" customClass="SpaceAlert" customModule="Planet_Swap" customModuleProvider="target">
+                                <rect key="frame" x="67" y="309" width="241" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -72,6 +77,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uXT-ow-HhH"/>
                     </view>
+                    <connections>
+                        <outlet property="OptionsAlert" destination="an8-WA-leG" id="LlM-oF-bna"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VSo-QK-zDE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
