@@ -116,11 +116,11 @@ class GameViewController: UIViewController {
       nextButton.isHidden = false
       nextButton.isUserInteractionEnabled = false
       currentLevelNumber = currentLevelNumber < numLevels ? currentLevelNumber + 1 : 1
-      showGameOver()
+      showLevelOver(option: "next")
     } else if movesLeft == 0 {
       gameOverPanel.image = UIImage(named: "GameOver")
       backgroundMusic?.stop()
-      showGameOver()
+      showLevelOver(option: "lobby")
     }
   }
   
@@ -170,15 +170,32 @@ class GameViewController: UIViewController {
     scoreLabel.text = String(format: "%ld", score)
   }
   
-  func showGameOver() {
+  func showLevelOver(option: String) {
     gameOverPanel.isHidden = false
     scene.isUserInteractionEnabled = false
     shuffleButton.isHidden = true
 
-    scene.animateGameOver {
-      self.tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideGameOver))
-      self.view.addGestureRecognizer(self.tapGestureRecognizer)
+    if option == "next" {
+      scene.animateGameOver {
+        self.tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideGameOver))
+        self.view.addGestureRecognizer(self.tapGestureRecognizer)
+      }
+    } else if option == "lobby" {
+      scene.animateGameOver {
+        self.tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.returnToLobby))
+        self.view.addGestureRecognizer(self.tapGestureRecognizer)
+      }
     }
+  }
+  
+  @objc func returnToLobby() {
+    view.removeGestureRecognizer(tapGestureRecognizer)
+    tapGestureRecognizer = nil
+
+    gameOverPanel.isHidden = true
+    scene.isUserInteractionEnabled = true
+    
+    self.presentingViewController?.dismiss(animated: true, completion: nil)
   }
   
   @objc func hideGameOver() {
