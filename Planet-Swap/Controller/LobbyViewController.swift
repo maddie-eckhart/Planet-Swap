@@ -35,6 +35,10 @@ class LobbyViewController: UIViewController {
   
   @IBOutlet weak var OptionsAlert: SpaceAlert!
   
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+      return .lightContent
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -52,6 +56,9 @@ class LobbyViewController: UIViewController {
     OptionsAlert.isHidden = true
   }
 
+  func Quit() {
+  }
+  
 }
 
 extension UIView {
