@@ -32,10 +32,32 @@ class OptionsViewController: UIViewController {
 
   @IBOutlet weak var optionsAlert: SpaceAlert!
   
+  override init(alertType: SpaceAlertType) {
+      super.init(alertType: alertType)
+  }
+  
+  convenience init(alertType: SpaceAlertType) {
+    switch alertType {
+    case .Options:
+      optionsAlert.mainLabel.text = "Hello This Works"
+    default:
+      optionsAlert.mainLabel.text = "Nope"
+    }
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+      fatalError("init(coder:) has not been implemented")
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    optionsAlert.backgroundColor = .cyan
-      
+    optionsAlert.center = self.optionsAlert.center
   }
 
+}
+
+enum SpaceAlertType {
+  case Options
+  case BeginGame
+  case EndGame
 }

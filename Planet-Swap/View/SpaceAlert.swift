@@ -31,6 +31,7 @@ import UIKit
 class SpaceAlert: UIView {
 
   @IBOutlet var contentView: UIView!
+  @IBOutlet weak var mainLabel: UILabel!
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -43,10 +44,10 @@ class SpaceAlert: UIView {
   }
   
   private func commonInit() {
-//    let content = Bundle.main.loadNibNamed("contentView", owner: self, options: nil)
-//    addSubview(content)
-//    contentView.frame = self.bounds
-//    contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+    Bundle.main.loadNibNamed("SpaceAlert", owner: self, options: nil)
+    addSubview(contentView)
+    contentView.frame = self.bounds
+    contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
   }
 
 }

@@ -11,11 +11,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpaceAlert" customModule="Planet_Swap" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="k5M-ia-98k" id="U9f-qv-N8Y"/>
+                <outlet property="mainLabel" destination="Zhj-a6-JBS" id="R1h-Ne-SvH"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="k5M-ia-98k">
-            <rect key="frame" x="0.0" y="0.0" width="326" height="352"/>
+            <rect key="frame" x="0.0" y="0.0" width="326" height="415"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alert Box" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhj-a6-JBS">
@@ -29,7 +30,7 @@
             <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="cXY-11-Bcr"/>
-            <point key="canvasLocation" x="250.72463768115944" y="-200.22321428571428"/>
+            <point key="canvasLocation" x="250.72463768115944" y="-179.12946428571428"/>
         </view>
     </objects>
 </document>
