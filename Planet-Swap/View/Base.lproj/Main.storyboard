@@ -62,11 +62,6 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="an8-WA-leG" userLabel="OptionsView" customClass="SpaceAlert" customModule="Planet_Swap" customModuleProvider="target">
-                                <rect key="frame" x="67" y="309" width="241" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -77,9 +72,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uXT-ow-HhH"/>
                     </view>
-                    <connections>
-                        <outlet property="OptionsAlert" destination="an8-WA-leG" id="LlM-oF-bna"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VSo-QK-zDE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -225,7 +217,32 @@
                     <viewLayoutGuide key="safeArea" id="MWd-CX-VWZ"/>
                 </stackView>
             </objects>
-            <point key="canvasLocation" x="-76" y="134"/>
+            <point key="canvasLocation" x="-174" y="134"/>
+        </scene>
+        <!--OptionsViewController-->
+        <scene sceneID="hqD-c9-y2u">
+            <objects>
+                <viewController storyboardIdentifier="OptionsViewController" id="9wE-EH-588" userLabel="OptionsViewController" customClass="OptionsViewController" customModule="Planet_Swap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VnY-dW-k5g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m4g-zB-bn4" customClass="SpaceAlert" customModule="Planet_Swap" customModuleProvider="target">
+                                <rect key="frame" x="67" y="181" width="240" height="304"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="hn0-yv-mxF"/>
+                    </view>
+                    <connections>
+                        <outlet property="optionsAlert" destination="m4g-zB-bn4" id="JVP-2n-1l8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wpy-Iq-JGj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-175.19999999999999" y="807.34632683658174"/>
         </scene>
     </scenes>
     <resources>

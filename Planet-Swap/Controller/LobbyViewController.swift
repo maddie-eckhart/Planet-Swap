@@ -15,10 +15,11 @@ class LobbyViewController: UIViewController {
     }
   }
   
+  @available(iOS 13.0, *)
   @IBAction func Options(_ sender: Any) {
-    let optionsAlert = SpaceAlert()
-    view.addSubview(optionsAlert)
-    OptionsAlert.isHidden = false
+
+    let vc: UIViewController = self.storyboard?.instantiateViewController(identifier: "OptionsViewController") as! UIViewController
+    present(vc, animated: false, completion: nil)
   }
   
   @IBAction func Connect(_ sender: Any) {
@@ -32,8 +33,6 @@ class LobbyViewController: UIViewController {
          application.open(webURL as URL)
     }
   }
-  
-  @IBOutlet weak var OptionsAlert: SpaceAlert!
   
   override var preferredStatusBarStyle: UIStatusBarStyle {
       return .lightContent
@@ -53,7 +52,6 @@ class LobbyViewController: UIViewController {
     skyView.layer.zPosition = -10
     self.view.addSubview(skyView)
     
-    OptionsAlert.isHidden = true
   }
 
   func Quit() {

@@ -37,6 +37,7 @@
 		C14F4A3F236F17DB0087BCC1 /* Explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = C14F4A3E236F17DB0087BCC1 /* Explosion.wav */; };
 		C14F4A43236F19330087BCC1 /* Sad_Trombone.wav in Resources */ = {isa = PBXBuildFile; fileRef = C14F4A42236F19330087BCC1 /* Sad_Trombone.wav */; };
 		C14F4A45236F20570087BCC1 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14F4A44236F20570087BCC1 /* LobbyViewController.swift */; };
+		C170439123FC8868009EF756 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C170439023FC8868009EF756 /* OptionsViewController.swift */; };
 		C178FFCC23E3524800FB8A02 /* SpaceAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = C178FFCB23E3524800FB8A02 /* SpaceAlert.xib */; };
 		C178FFCE23E352E300FB8A02 /* SpaceAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C178FFCD23E352E300FB8A02 /* SpaceAlert.swift */; };
 /* End PBXBuildFile section */
@@ -74,6 +75,7 @@
 		C14F4A3E236F17DB0087BCC1 /* Explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Explosion.wav; sourceTree = "<group>"; };
 		C14F4A42236F19330087BCC1 /* Sad_Trombone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Sad_Trombone.wav; sourceTree = "<group>"; };
 		C14F4A44236F20570087BCC1 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
+		C170439023FC8868009EF756 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		C178FFCB23E3524800FB8A02 /* SpaceAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpaceAlert.xib; sourceTree = "<group>"; };
 		C178FFCD23E352E300FB8A02 /* SpaceAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -181,6 +183,7 @@
 		C1176E26236E01F70099576F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C170439023FC8868009EF756 /* OptionsViewController.swift */,
 				C14F4A44236F20570087BCC1 /* LobbyViewController.swift */,
 				17A7E5791FB513CC0044C48F /* GameViewController.swift */,
 			);
@@ -285,6 +288,7 @@
 				17A7E57A1FB513CC0044C48F /* GameViewController.swift in Sources */,
 				C12737BF236E7A2900483A95 /* Chain.swift in Sources */,
 				C1176E2A236E0BC10099576F /* Level.swift in Sources */,
+				C170439123FC8868009EF756 /* OptionsViewController.swift in Sources */,
 				C14F4A45236F20570087BCC1 /* LobbyViewController.swift in Sources */,
 				C12737BD236E528C00483A95 /* Tile.swift in Sources */,
 				17A7E5721FB513CC0044C48F /* AppDelegate.swift in Sources */,
