@@ -28,32 +28,44 @@
 
 import UIKit
 
-class OptionsViewController: UIViewController {
+class SpaceAlertViewController: UIViewController {
+  
+//  init(alertType: SpaceAlertType) {
+//    super.init(nibName: "SpaceAlert",bundle: nil)
+//      setType(alertType: alertType)
+//  }
+////    init(alertType: alertType)
+////    setType(alertType: alertType)
+////  }
+////
+//  required init?(coder aDecoder: NSCoder) {
+//      super.init(coder: aDecoder)
+//  }
 
-  @IBOutlet weak var optionsAlert: SpaceAlert!
-  
-  override init(alertType: SpaceAlertType) {
-      super.init(alertType: alertType)
-  }
-  
-  convenience init(alertType: SpaceAlertType) {
+  func setType(alertType: SpaceAlertType) {
     switch alertType {
     case .Options:
-      optionsAlert.mainLabel.text = "Hello This Works"
+      //optionsAlert.mainLabel.text = "Hello This Works"
+      print("hello")
     default:
-      optionsAlert.mainLabel.text = "Nope"
+      print("hello")
     }
-  }
-  
-  required init?(coder aDecoder: NSCoder) {
-      fatalError("init(coder:) has not been implemented")
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    optionsAlert.center = self.optionsAlert.center
+    let optionsAlert: PopupMenu = PopupMenu()
+    optionsAlert.setup()
+    print(view.center)
+    view.addSubview(optionsAlert)
+    
+    print("load")
   }
 
+//  override func awakeFromNib() {
+//      super.awakeFromNib()
+//      print("awakevc")
+//  }
 }
 
 enum SpaceAlertType {

@@ -17,9 +17,9 @@ class LobbyViewController: UIViewController {
   
   @available(iOS 13.0, *)
   @IBAction func Options(_ sender: Any) {
-
-    let vc: UIViewController = self.storyboard?.instantiateViewController(identifier: "OptionsViewController") as! UIViewController
-    present(vc, animated: false, completion: nil)
+//    let vc : SpaceAlertViewController = SpaceAlertViewController(alertType: .Options)
+//    let vc2: SpaceAlertViewController = self.storyboard?.instantiateViewController(identifier: "SpaceAlertViewController") as! SpaceAlertViewController
+//    present(vc2, animated: false, completion: {SpaceAlertViewController(alertType: .Options)})
   }
   
   @IBAction func Connect(_ sender: Any) {
@@ -51,9 +51,15 @@ class LobbyViewController: UIViewController {
     skyView.rotate360Degrees(duration: 190)
     skyView.layer.zPosition = -10
     self.view.addSubview(skyView)
-    
   }
 
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if segue.destination is SpaceAlertViewController {
+          let vc = segue.destination as? SpaceAlertViewController
+        vc?.setType(alertType: .Options)
+      }
+  }
+  
   func Quit() {
   }
   

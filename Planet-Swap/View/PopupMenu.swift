@@ -28,30 +28,17 @@
 
 import UIKit
 
-class SpaceAlert: UIView {
+class PopupMenu: UIView {
 
-  @IBOutlet var contentView: UIView!
-  @IBOutlet weak var mainLabel: UILabel!
-  
-  override init(frame: CGRect) {
-    super.init(frame: frame)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  func setup() {
-    Bundle.main.loadNibNamed("SpaceAlert", owner: self, options: nil)
-    addSubview(contentView)
-    contentView.frame = self.bounds
-    contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-  }
+    func setup() {
+        // Do any additional setup after loading the view, typically from a nib.
+      let popup : UIView = UIView(frame: CGRect(x: UIScreen.main.bounds.size.width/2, y: UIScreen.main.bounds.size.height/2, width: 100.0, height: 100.0))
 
-  override func awakeFromNib() {
-      super.awakeFromNib()
-      print("aButt")
-  }
+        popup.backgroundColor = .cyan
+        popup.layer.cornerRadius = 25
+        popup.layer.borderWidth = 2
+        popup.layer.borderColor = UIColor.red.cgColor
+        addSubview(popup)
+    }
+
 }

@@ -47,6 +47,7 @@
                                         </state>
                                         <connections>
                                             <action selector="Options:" destination="rT6-hQ-6Xg" eventType="touchUpInside" id="jNR-7i-PbW"/>
+                                            <segue destination="9wE-EH-588" kind="presentation" animates="NO" id="xPb-me-aKB"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0un-Ee-uwP" userLabel="CONNECT">
@@ -219,30 +220,29 @@
             </objects>
             <point key="canvasLocation" x="-174" y="134"/>
         </scene>
-        <!--OptionsViewController-->
+        <!--SpaceAlertViewController-->
         <scene sceneID="hqD-c9-y2u">
             <objects>
-                <viewController storyboardIdentifier="OptionsViewController" id="9wE-EH-588" userLabel="OptionsViewController" customClass="OptionsViewController" customModule="Planet_Swap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SpaceAlertViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9wE-EH-588" userLabel="SpaceAlertViewController" customClass="SpaceAlertViewController" customModule="Planet_Swap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VnY-dW-k5g">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m4g-zB-bn4" customClass="SpaceAlert" customModule="Planet_Swap" customModuleProvider="target">
-                                <rect key="frame" x="67" y="181" width="240" height="304"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U85-Lc-E8c">
+                                <rect key="frame" x="166" y="80" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="hn0-yv-mxF"/>
                     </view>
-                    <connections>
-                        <outlet property="optionsAlert" destination="m4g-zB-bn4" id="JVP-2n-1l8"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wpy-Iq-JGj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-175.19999999999999" y="807.34632683658174"/>
+            <point key="canvasLocation" x="-175" y="906"/>
         </scene>
     </scenes>
     <resources>
