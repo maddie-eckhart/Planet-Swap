@@ -55,7 +55,7 @@ class LobbyViewController: UIViewController {
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if segue.destination is SpaceAlertViewController {
-          let vc = segue.destination as? SpaceAlertViewController
+        let vc = segue.destination as? SpaceAlertViewController
         vc?.setType(alertType: .Options)
       }
   }

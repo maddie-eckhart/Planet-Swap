@@ -30,18 +30,6 @@ import UIKit
 
 class SpaceAlertViewController: UIViewController {
   
-//  init(alertType: SpaceAlertType) {
-//    super.init(nibName: "SpaceAlert",bundle: nil)
-//      setType(alertType: alertType)
-//  }
-////    init(alertType: alertType)
-////    setType(alertType: alertType)
-////  }
-////
-//  required init?(coder aDecoder: NSCoder) {
-//      super.init(coder: aDecoder)
-//  }
-
   func setType(alertType: SpaceAlertType) {
     switch alertType {
     case .Options:
@@ -62,10 +50,6 @@ class SpaceAlertViewController: UIViewController {
     print("load")
   }
 
-//  override func awakeFromNib() {
-//      super.awakeFromNib()
-//      print("awakevc")
-//  }
 }
 
 enum SpaceAlertType {
