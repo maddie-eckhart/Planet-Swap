@@ -17,9 +17,8 @@ class PopupMenu: UIView {
       
       // Close button setup
       let closeButton = UIButton(frame: CGRect(x: 20, y: 20, width: 50, height: 50))
-      closeButton.backgroundColor = .green
       closeButton.layer.cornerRadius = closeButton.bounds.size.width/2
-      closeButton.setTitle("x", for: .normal)
+      closeButton.setImage(UIImage(named: "closeButton"), for: .normal)
       closeButton.addTarget(self, action: #selector(closeButtonAction), for: .touchUpInside)
       popup.addSubview(closeButton)
       
