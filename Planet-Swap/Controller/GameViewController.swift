@@ -31,6 +31,7 @@ class GameViewController: UIViewController {
   
   // MARK: IBOutlets
   @IBOutlet weak var gameOverPanel: UIImageView!
+  @IBOutlet weak var levelLabel: UILabel!
   @IBOutlet weak var targetLabel: UILabel!
   @IBOutlet weak var movesLabel: UILabel!
   @IBOutlet weak var scoreLabel: UILabel!
@@ -75,6 +76,7 @@ class GameViewController: UIViewController {
     // Setup the level.
     level = Level(filename: "Level_\(levelNumber)")
     scene.level = level
+    levelLabel.text = "Level \(levelNumber)"
 
     scene.addTiles()
     scene.swipeHandler = handleSwipe
@@ -159,7 +161,15 @@ class GameViewController: UIViewController {
   }
   
   func beginNextTurn() {
-    level.detectPossibleSwaps()
+    let currentSwaps = level.detectPossibleSwaps()
+    if currentSwaps == [] {
+      print("NO MORE SWAPS")
+      scene.animateReshuffle {
+        self.tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideGameOver))
+        self.view.addGestureRecognizer(self.tapGestureRecognizer)
+      }
+      self.level.shuffle()
+    }
     view.isUserInteractionEnabled = true
     decrementMoves()
   }

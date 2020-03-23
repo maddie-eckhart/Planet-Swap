@@ -2,7 +2,8 @@ import Foundation
 
 let numColumns = 9
 let numRows = 9
-let numLevels = 7
+let numLevels = 11
+// update level numbers here
 
 class Level {
   
@@ -200,7 +201,7 @@ class Level {
     return horizontalChains.union(verticalChains)
   }
   
-  func detectPossibleSwaps() {
+  func detectPossibleSwaps() -> Set<Swap> {
     var set: Set<Swap> = []
 
     for row in 0..<numRows {
@@ -260,6 +261,7 @@ class Level {
     }
 
     possibleSwaps = set
+    return possibleSwaps
   }
   
   func isPossibleSwap(_ swap: Swap) -> Bool {

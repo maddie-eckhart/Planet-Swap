@@ -44,7 +44,6 @@ class SpaceAlertViewController: UIViewController {
     super.viewDidLoad()
     let optionsAlert: PopupMenu = PopupMenu()
     optionsAlert.setup()
-    print(view.center)
     view.addSubview(optionsAlert)
     
     print("load")

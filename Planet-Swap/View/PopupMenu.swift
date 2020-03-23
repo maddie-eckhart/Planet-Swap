@@ -8,6 +8,7 @@ class PopupMenu: UIView {
       popup.backgroundColor = UIColor(red: 202/255, green: 216/255, blue: 241/255, alpha: 1)
       popup.layer.cornerRadius = 40
       popup.layer.borderWidth = 12
+      popup.isUserInteractionEnabled = true
       if #available(iOS 13.0, *) {
         popup.layer.borderColor = CGColor(srgbRed: 255/255, green: 91/255, blue: 92/255, alpha: 1)
       } else {
@@ -16,16 +17,24 @@ class PopupMenu: UIView {
       addSubview(popup)
       
       // Close button setup
-      let closeButton = UIButton(frame: CGRect(x: 20, y: 20, width: 50, height: 50))
-      closeButton.layer.cornerRadius = closeButton.bounds.size.width/2
-      closeButton.setImage(UIImage(named: "closeButton"), for: .normal)
-      closeButton.addTarget(self, action: #selector(closeButtonAction), for: .touchUpInside)
+      let closeButton = UIImageView(frame: CGRect(x: 20, y: 20, width: 50, height: 50))
+      closeButton.image = UIImage(named: "closeButton")
+      closeButton.isUserInteractionEnabled = true
+      let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
+      //tapGesture.delegate = self
+      closeButton.addGestureRecognizer(tapGesture)
       popup.addSubview(closeButton)
       
     }
   
   @objc func closeButtonAction() {
     print("close")
+  }
+  
+  @objc func handleTap(sender: UITapGestureRecognizer) {
+      if sender.state == .ended {
+          // handling code
+      }
   }
 
 }

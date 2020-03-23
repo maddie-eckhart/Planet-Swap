@@ -20,18 +20,33 @@ class LobbyViewController: UIViewController {
 //    let vc : SpaceAlertViewController = SpaceAlertViewController(alertType: .Options)
 //    let vc2: SpaceAlertViewController = self.storyboard?.instantiateViewController(identifier: "SpaceAlertViewController") as! SpaceAlertViewController
 //    present(vc2, animated: false, completion: {SpaceAlertViewController(alertType: .Options)})
-  }
+      let optionsAlert: PopupMenu = PopupMenu()
+      optionsAlert.setup()
+      view.addSubview(optionsAlert)
+    }
   
   @IBAction func Connect(_ sender: Any) {
     let twitterHandle =  "PlanetSwapGame"
     let appURL = NSURL(string: "twitter://user?screen_name=\(twitterHandle)")!
     let webURL = NSURL(string: "https://twitter.com/\(twitterHandle)")!
+//    let application = UIApplication.shared
+//    if application.canOpenURL(appURL as URL) {
+//         application.open(appURL as URL)
+//    } else {
+//         application.open(webURL as URL)
+//    }
+
+//        let appURL = NSURL(string: "twitter://user?screen_name=\(screenName)")!
+//        let webURL = NSURL(string: "https://twitter.com/\(screenName)")!
+
     let application = UIApplication.shared
+
     if application.canOpenURL(appURL as URL) {
-         application.open(appURL as URL)
-    } else {
-         application.open(webURL as URL)
-    }
+      application.openURL(appURL as URL)
+        } else {
+      application.openURL(webURL as URL)
+        }
+    
   }
   
   override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -53,12 +68,17 @@ class LobbyViewController: UIViewController {
     self.view.addSubview(skyView)
   }
 
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      if segue.destination is SpaceAlertViewController {
-        let vc = segue.destination as? SpaceAlertViewController
-        vc?.setType(alertType: .Options)
-      }
-  }
+//  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//      if segue.destination is SpaceAlertViewController {
+//        let vc = segue.destination as? SpaceAlertViewController
+//        if #available(iOS 13.0, *) {
+//          vc?.modalPresentationStyle = .fullScreen
+//        } else {
+//          // Fallback on earlier versions
+//        }
+//        vc?.setType(alertType: .Options)
+//      }
+//  }
   
   func Quit() {
   }

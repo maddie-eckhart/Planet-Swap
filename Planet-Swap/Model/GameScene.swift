@@ -203,12 +203,21 @@ class GameScene: SKScene {
   }
   
   func animateGameOver(_ completion: @escaping () -> Void) {
-    gameOverMusic?.play()
+    //gameOverMusic?.play()
     let action = SKAction.move(by: CGVector(dx: 0, dy: -size.height), duration: 0.3)
     action.timingMode = .easeIn
     gameLayer.run(action, completion: completion)
   }
 
+  func animateReshuffle(_ completion: @escaping () -> Void) {
+//    let actionIn = SKAction.move(by: CGVector(dx: 0, dy: -size.height), duration: 0.3)
+//    actionIn.timingMode = .easeIn
+//    gameLayer.run(actionIn, completion: completion)
+//    let actionOut = SKAction.move(by: CGVector(dx: 0, dy: size.height), duration: 0.3)
+//    actionOut.timingMode = .easeIn
+//    gameLayer.run(actionOut, completion: completion)
+  }
+  
   func animateBeginGame(_ completion: @escaping () -> Void) {
     gameLayer.isHidden = false
     gameLayer.position = CGPoint(x: 0, y: size.height)
