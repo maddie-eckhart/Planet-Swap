@@ -1,21 +1,23 @@
 {
   "images" : [
     {
+      "filename" : "buttonblue-highlight.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "buttonblue-highlight@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "buttonblue-highlight@3x.png",
       "idiom" : "universal",
-      "filename" : "Background@3x.png",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

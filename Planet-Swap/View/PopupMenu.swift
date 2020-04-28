@@ -17,11 +17,11 @@ class PopupMenu: UIView {
       addSubview(popup)
       
       // Close button setup
-      let closeButton = UIImageView(frame: CGRect(x: 20, y: 20, width: 50, height: 50))
+      let closeButton = UIImageView(frame: CGRect(x: 20, y: 20, width: 150, height: 150))
       closeButton.image = UIImage(named: "closeButton")
       closeButton.isUserInteractionEnabled = true
       let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
-      //tapGesture.delegate = self
+     // tapGesture.delegate = self
       closeButton.addGestureRecognizer(tapGesture)
       popup.addSubview(closeButton)
       

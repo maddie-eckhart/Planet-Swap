@@ -17,13 +17,8 @@ class LobbyViewController: UIViewController {
   
   @available(iOS 13.0, *)
   @IBAction func Options(_ sender: Any) {
-//    let vc : SpaceAlertViewController = SpaceAlertViewController(alertType: .Options)
-//    let vc2: SpaceAlertViewController = self.storyboard?.instantiateViewController(identifier: "SpaceAlertViewController") as! SpaceAlertViewController
-//    present(vc2, animated: false, completion: {SpaceAlertViewController(alertType: .Options)})
-      let optionsAlert: PopupMenu = PopupMenu()
-      optionsAlert.setup()
-      view.addSubview(optionsAlert)
-    }
+  
+  }
   
   @IBAction func Connect(_ sender: Any) {
     let twitterHandle =  "PlanetSwapGame"
@@ -43,6 +38,7 @@ class LobbyViewController: UIViewController {
 
     if application.canOpenURL(appURL as URL) {
       application.openURL(appURL as URL)
+      //application.open(appURL, options: .init(), completionHandler: nil)
         } else {
       application.openURL(webURL as URL)
         }
@@ -68,17 +64,12 @@ class LobbyViewController: UIViewController {
     self.view.addSubview(skyView)
   }
 
-//  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//      if segue.destination is SpaceAlertViewController {
-//        let vc = segue.destination as? SpaceAlertViewController
-//        if #available(iOS 13.0, *) {
-//          vc?.modalPresentationStyle = .fullScreen
-//        } else {
-//          // Fallback on earlier versions
-//        }
-//        vc?.setType(alertType: .Options)
-//      }
-//  }
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if segue.destination is SpaceAlertViewController {
+        let vc = segue.destination as? SpaceAlertViewController
+        vc?.alertType = .Options
+      }
+  }
   
   func Quit() {
   }

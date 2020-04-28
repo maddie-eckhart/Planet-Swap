@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rT6-hQ-6Xg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rT6-hQ-6Xg">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,7 +32,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPo-f3-Rik" userLabel="START">
                                         <rect key="frame" x="0.0" y="0.0" width="127" height="43"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="PLAY" backgroundImage="Button">
+                                        <state key="normal" title="PLAY" backgroundImage="ButtonPink">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -42,17 +42,20 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ij5-Ub-oiR" userLabel="OPTIONS">
                                         <rect key="frame" x="0.0" y="53" width="127" height="43"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="OPTIONS" backgroundImage="Button">
+                                        <state key="normal" title="OPTIONS" backgroundImage="ButtonPink">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="Options:" destination="rT6-hQ-6Xg" eventType="touchUpInside" id="jNR-7i-PbW"/>
+                                            <segue destination="9wE-EH-588" kind="popoverPresentation" popoverAnchorView="ij5-Ub-oiR" id="sHB-L0-8Mo">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0un-Ee-uwP" userLabel="CONNECT">
                                         <rect key="frame" x="0.0" y="106" width="127" height="43"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="CONNECT" backgroundImage="Button">
+                                        <state key="normal" title="CONNECT" backgroundImage="ButtonPink">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -160,7 +163,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="wNP-W8-BBF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="SHUFFLE" backgroundImage="Button">
+                                <state key="normal" title="SHUFFLE" backgroundImage="ButtonPink">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -170,7 +173,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1me-H5-hzn">
                                 <rect key="frame" x="124" y="463" width="127" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="NEXT" backgroundImage="Button">
+                                <state key="normal" title="NEXT" backgroundImage="ButtonPink">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
@@ -235,21 +238,59 @@
         <!--SpaceAlertViewController-->
         <scene sceneID="hqD-c9-y2u">
             <objects>
-                <viewController storyboardIdentifier="SpaceAlertViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9wE-EH-588" userLabel="SpaceAlertViewController" customClass="SpaceAlertViewController" customModule="Planet_Swap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SpaceAlertViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9wE-EH-588" userLabel="SpaceAlertViewController" customClass="SpaceAlertViewController" customModule="Planet_Swap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VnY-dW-k5g">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" tag="5" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dpP-bm-RZv">
+                                <rect key="frame" x="124.5" y="249" width="126" height="149"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gax-EH-mc6">
+                                        <rect key="frame" x="0.0" y="0.0" width="126" height="43"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="MUSIC" backgroundImage="ButtonBlue">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jss-w3-0QE">
+                                        <rect key="frame" x="0.0" y="53" width="126" height="43"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="SOUNDS" backgroundImage="ButtonBlue">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5t-px-D1y">
+                                        <rect key="frame" x="0.0" y="106" width="126" height="43"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="HELP" backgroundImage="ButtonBlue">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dpP-bm-RZv" firstAttribute="centerX" secondItem="VnY-dW-k5g" secondAttribute="centerX" id="IUo-hS-sbd"/>
+                            <constraint firstItem="dpP-bm-RZv" firstAttribute="centerY" secondItem="VnY-dW-k5g" secondAttribute="centerY" id="Piy-yG-dJ6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hn0-yv-mxF"/>
                     </view>
                     <navigationItem key="navigationItem" id="vAg-wv-Jry"/>
+                    <connections>
+                        <outlet property="button1" destination="Gax-EH-mc6" id="wTM-Ue-Lbz"/>
+                        <outlet property="button2" destination="Jss-w3-0QE" id="GTZ-66-bKg"/>
+                        <outlet property="button3" destination="h5t-px-D1y" id="1lf-a9-dYX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wpy-Iq-JGj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-175" y="906"/>
+            <point key="canvasLocation" x="-518" y="905"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Button" width="127" height="43"/>
+        <image name="ButtonBlue" width="126" height="43"/>
+        <image name="ButtonPink" width="127" height="43"/>
     </resources>
 </document>

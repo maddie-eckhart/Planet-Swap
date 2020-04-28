@@ -1,40 +1,20 @@
-/// Copyright (c) 2020 Razeware LLC
-/// 
-/// Permission is hereby granted, free of charge, to any person obtaining a copy
-/// of this software and associated documentation files (the "Software"), to deal
-/// in the Software without restriction, including without limitation the rights
-/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-/// copies of the Software, and to permit persons to whom the Software is
-/// furnished to do so, subject to the following conditions:
-/// 
-/// The above copyright notice and this permission notice shall be included in
-/// all copies or substantial portions of the Software.
-/// 
-/// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
-/// distribute, sublicense, create a derivative work, and/or sell copies of the
-/// Software in any work that is designed, intended, or marketed for pedagogical or
-/// instructional purposes related to programming, coding, application development,
-/// or information technology.  Permission for such use, copying, modification,
-/// merger, publication, distribution, sublicensing, creation of derivative works,
-/// or sale is expressly withheld.
-/// 
-/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-/// THE SOFTWARE.
-
 import UIKit
 
 class SpaceAlertViewController: UIViewController {
   
-  func setType(alertType: SpaceAlertType) {
+
+  @IBOutlet weak var button1: UIButton!
+  @IBOutlet weak var button2: UIButton!
+  @IBOutlet weak var button3: UIButton!
+  var alertType: SpaceAlertType?
+  
+  func getType() {
     switch alertType {
     case .Options:
-      //optionsAlert.mainLabel.text = "Hello This Works"
-      print("hello")
+      print("Options Alert")
+      button1.titleLabel?.text = "MUSIC"
+      button2.titleLabel?.text = "SOUNDS"
+      button3.titleLabel?.text = "HELP"
     default:
       print("hello")
     }
@@ -42,11 +22,19 @@ class SpaceAlertViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    let optionsAlert: PopupMenu = PopupMenu()
-    optionsAlert.setup()
-    view.addSubview(optionsAlert)
-    
-    print("load")
+    getType()
+    view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+    let backgroundCircle: UIView = UIView(frame: CGRect(x: 0, y: 0       , width: 300.0, height: 300.0))
+//    popup.backgroundColor = UIColor(red: 202/255, green: 216/255, blue: 241/255, alpha: 1)
+    backgroundCircle.layer.cornerRadius = 150
+    backgroundCircle.layer.borderWidth = 12
+    backgroundCircle.isUserInteractionEnabled = false
+    if #available(iOS 13.0, *) {
+      backgroundCircle.layer.borderColor = CGColor(srgbRed: 255/255, green: 91/255, blue: 92/255, alpha: 1)
+    } else {
+//      popup.layer.borderColor = UIColor.black.cgColor
+    }
+    view.addSubview(backgroundCircle)
   }
 
 }
