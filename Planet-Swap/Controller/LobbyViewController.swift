@@ -51,6 +51,7 @@ class LobbyViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    //self.modalPresentationStyle = UIModalPresentationStyle.currentContext
     
     view.backgroundColor = UIColor(red: 32/255, green: 9/255, blue: 112/255, alpha: 1)
     let viewMidX = view!.bounds.midX * 2
@@ -62,6 +63,7 @@ class LobbyViewController: UIViewController {
     skyView.rotate360Degrees(duration: 190)
     skyView.layer.zPosition = -10
     self.view.addSubview(skyView)
+    
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

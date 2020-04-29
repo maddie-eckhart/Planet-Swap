@@ -47,9 +47,7 @@
                                         </state>
                                         <connections>
                                             <action selector="Options:" destination="rT6-hQ-6Xg" eventType="touchUpInside" id="jNR-7i-PbW"/>
-                                            <segue destination="9wE-EH-588" kind="popoverPresentation" popoverAnchorView="ij5-Ub-oiR" id="sHB-L0-8Mo">
-                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                            </segue>
+                                            <segue destination="9wE-EH-588" kind="presentation" modalPresentationStyle="fullScreen" id="sHB-L0-8Mo"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0un-Ee-uwP" userLabel="CONNECT">
@@ -240,11 +238,11 @@
             <objects>
                 <viewController storyboardIdentifier="SpaceAlertViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9wE-EH-588" userLabel="SpaceAlertViewController" customClass="SpaceAlertViewController" customModule="Planet_Swap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VnY-dW-k5g">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" tag="5" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dpP-bm-RZv">
-                                <rect key="frame" x="124.5" y="249" width="126" height="149"/>
+                                <rect key="frame" x="124.5" y="259" width="126" height="149"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gax-EH-mc6">
                                         <rect key="frame" x="0.0" y="0.0" width="126" height="43"/>
