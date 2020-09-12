@@ -16,8 +16,8 @@ class CharacterViewController: UIViewController, UICollectionViewDelegate, UICol
   var selectedTop: CharacterCollectionViewCell?
   var selectedTopImage: UIImage?
   
-  let topData: [CharacterModel] = [CharacterModel(image: UIImage(named: "alien1")!), CharacterModel(image: UIImage(named: "alien2")!), CharacterModel(image: UIImage(named: "alien3")!), CharacterModel(image: UIImage(named: "alien4")!), CharacterModel(image: UIImage(named: "alien5")!)]
-  let bottomData: [CharacterModel] = [CharacterModel(image: UIImage(named: "alien1")!), CharacterModel(image: UIImage(named: "alien2")!), CharacterModel(image: UIImage(named: "alien3")!), CharacterModel(image: UIImage(named: "alien4")!), CharacterModel(image: UIImage(named: "alien5")!)]
+  let topData: [CharacterModel] = [CharacterModel(image: UIImage(named: "alien0001")!), CharacterModel(image: UIImage(named: "alien0002")!), CharacterModel(image: UIImage(named: "alien0003")!), CharacterModel(image: UIImage(named: "alien0004")!), CharacterModel(image: UIImage(named: "alien0005")!), CharacterModel(image: UIImage(named: "alien0006")!), CharacterModel(image: UIImage(named: "alien0007")!), CharacterModel(image: UIImage(named: "alien0008")!), CharacterModel(image: UIImage(named: "alien0009")!)]
+  let bottomData: [CharacterModel] = [CharacterModel(image: UIImage(named: "ship0001")!), CharacterModel(image: UIImage(named: "ship0002")!), CharacterModel(image: UIImage(named: "ship0003")!), CharacterModel(image: UIImage(named: "ship0004")!), CharacterModel(image: UIImage(named: "ship0005")!), CharacterModel(image: UIImage(named: "ship0006")!), CharacterModel(image: UIImage(named: "ship0007")!), CharacterModel(image: UIImage(named: "ship0008")!), CharacterModel(image: UIImage(named: "ship0009")!)]
   
   // MARK: App Lifestyle
   
@@ -91,7 +91,7 @@ class CharacterViewController: UIViewController, UICollectionViewDelegate, UICol
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 5
+    return 9
   }
   
   func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -107,7 +107,7 @@ class CharacterViewController: UIViewController, UICollectionViewDelegate, UICol
 //      if cell.image == selectedTopImage {
 //        cell.backgroundColor = UIColor.lightGray.withAlphaComponent(0.7)
 //      } else {
-//        cell.backgroundColor = UIColor.clear
+        cell.backgroundColor = UIColor.clear
 //      }
       return cell
     } else {
