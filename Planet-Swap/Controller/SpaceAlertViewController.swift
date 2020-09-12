@@ -24,7 +24,7 @@ class SpaceAlertViewController: UIViewController {
     super.viewDidLoad()
     getType()
     view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
-    let backgroundCircle: UIView = UIView(frame: CGRect(x: UIScreen.main.bounds.size.width/2 - 140, y: UIScreen.main.bounds.size.height/2 - 168, width: 280.0, height: 280.0))
+    let backgroundCircle: UIView = UIView(frame: CGRect(x: UIScreen.main.bounds.size.width/2 - 140, y: UIScreen.main.bounds.size.height/2 - 164, width: 280.0, height: 280.0))
     backgroundCircle.backgroundColor = UIColor(red: 119/255, green: 135/255, blue: 166/255, alpha: 1)
     backgroundCircle.layer.cornerRadius = 140
     backgroundCircle.layer.borderWidth = 10

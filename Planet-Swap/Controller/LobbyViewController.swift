@@ -20,30 +20,34 @@ class LobbyViewController: UIViewController {
   
   }
   
-  @IBAction func Connect(_ sender: Any) {
-    let twitterHandle =  "PlanetSwapGame"
-    let appURL = NSURL(string: "twitter://user?screen_name=\(twitterHandle)")!
-    let webURL = NSURL(string: "https://twitter.com/\(twitterHandle)")!
-//    let application = UIApplication.shared
-//    if application.canOpenURL(appURL as URL) {
-//         application.open(appURL as URL)
-//    } else {
-//         application.open(webURL as URL)
-//    }
-
-//        let appURL = NSURL(string: "twitter://user?screen_name=\(screenName)")!
-//        let webURL = NSURL(string: "https://twitter.com/\(screenName)")!
-
-    let application = UIApplication.shared
-
-    if application.canOpenURL(appURL as URL) {
-      application.openURL(appURL as URL)
-      //application.open(appURL, options: .init(), completionHandler: nil)
-        } else {
-      application.openURL(webURL as URL)
-        }
+  @IBAction func EditCharacter(_ sender: Any) {
     
   }
+  
+//  @IBAction func Connect(_ sender: Any) {
+//    let twitterHandle =  "PlanetSwapGame"
+//    let appURL = NSURL(string: "twitter://user?screen_name=\(twitterHandle)")!
+//    let webURL = NSURL(string: "https://twitter.com/\(twitterHandle)")!
+////    let application = UIApplication.shared
+////    if application.canOpenURL(appURL as URL) {
+////         application.open(appURL as URL)
+////    } else {
+////         application.open(webURL as URL)
+////    }
+//
+////        let appURL = NSURL(string: "twitter://user?screen_name=\(screenName)")!
+////        let webURL = NSURL(string: "https://twitter.com/\(screenName)")!
+//
+//    let application = UIApplication.shared
+//
+//    if application.canOpenURL(appURL as URL) {
+//      application.openURL(appURL as URL)
+//      //application.open(appURL, options: .init(), completionHandler: nil)
+//        } else {
+//      application.openURL(webURL as URL)
+//        }
+//
+//  }
   
   override var preferredStatusBarStyle: UIStatusBarStyle {
       return .lightContent
